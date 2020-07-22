@@ -210,6 +210,10 @@ public class UserUtilities implements Printable {
 			while ((strLine = textReader.readLine()) != null) { //This loop adds new users line by line
 				tokenizedLine = fileParser(strLine, stringSize); //Tokenizes each line in the textfile.
 
+				if(tokenizedLine[tokenIndex.get("First Name")].equals("") || tokenizedLine[tokenIndex.get("Last Name")].equals("") || tokenizedLine[tokenIndex.get("Phone Number")].equals("")) {
+					continue;
+				}
+
 				creditMax = Double.parseDouble(tokenizedLine[tokenIndex.get("Credit Max")]); //Each attribute is extracted from the string line
 				creditAccountBalance = Double.parseDouble(tokenizedLine[tokenIndex.get("Credit Starting Balance")]);
 				address = tokenizedLine[tokenIndex.get("Address")];
