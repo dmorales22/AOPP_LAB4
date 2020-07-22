@@ -1,0 +1,102 @@
+First Name,Last Name,Date of Birth,Identification Number,Address,Phone Number,Checking Account Number,Savings Account Number,Credit Account Number,Checking Starting Balance,Savings Starting Balance,Credit Starting Balance,Credit Max
+Chip,Disney,"July 10, 1955",6,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1005,2005,3005,471.0,4169.71,-407.87,8289.0
+Goofy,Disney,"May 6, 1957",4,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1003,2003,3003,269.29,3653.91,-268.49,5775.0
+Daniel,F,"May 7, 1949",43,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1067,2067,3067,514.42,1247.0,-1700.4,4999.0
+Donald,Duck,"November 18, 2009",2,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1001,2001,3001,216.1,2334.79,-639.49,4887.0
+Kaa,Disney,"June 2, 2003",28,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1027,2027,3027,1128.38,1629.63,-67.97,7737.0
+Daniel,S,"September 18, 1981",55,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1079,2079,3079,672.36,4874.16,-79.11,8207.0
+Mufassa,Disney,"December 5, 1950",13,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1012,2012,3012,594.29,1144.45,-1537.85,9876.0
+David,Morales,"September 20, 1972",91,"531 W. University Ave, El Paso, TX 79968",(915) 747-5031,1049,2049,3049,1671.42,3047.46,-816.59,7371.0
+Alejandro,Blanco,"March 20, 2006",82,"522 W. University Ave, El Paso, TX 79968",(915) 747-5022,1040,2040,3040,1243.35,1689.46,-1098.13,3153.0
+Daniel,Y,"June 22, 1999",61,"501 W. University Ave, El Paso, TX 79968",(915) 747-5001,1085,2085,3085,1234.67,4514.21,-815.15,4748.0
+Alejandro,Ramirez,"May 12, 1997",94,"534 W. University Ave, El Paso, TX 79968",(915) 747-5034,1052,2052,3052,1515.13,382.84,-1081.89,7674.0
+Cruella,De Vil,"August 16, 1936",22,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1021,2021,3021,175.69,1592.7,-673.82,5570.0
+Piglet,Pooh,"June 18, 1983",70,"510 W. University Ave, El Paso, TX 79968",(915) 747-5010,1094,2094,3094,91.97,3877.58,-1115.64,7951.0
+German,Viezcas,"January 26, 1974",101,"541 W. University Ave, El Paso, TX 79968",(915) 747-5041,1059,2059,3059,1872.62,2978.34,-1892.04,6254.0
+Shere,Khan,"June 10, 1945",26,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1025,2025,3025,1158.11,4104.73,-1470.23,4932.0
+Daniel,V,"May 5, 1951",58,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1082,2082,3082,927.87,939.27,-1398.08,8556.0
+Elias,Roybal,"December 11, 2018",98,"538 W. University Ave, El Paso, TX 79968",(915) 747-5038,1056,2056,3056,864.85,1306.8,-1892.56,9505.0
+Pete,Disney,"March 3, 1980",66,"506 W. University Ave, El Paso, TX 79968",(915) 747-5006,1090,2090,3090,899.26,4462.3,-552.28,9468.0
+Pinocchio,Disney,"February 29, 1956",30,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1029,2029,3029,861.22,16.16,-1693.99,5203.0
+Winnie,Pooh,"November 30, 1946",68,"508 W. University Ave, El Paso, TX 79968",(915) 747-5008,1092,2092,3092,1714.29,4814.3,-1768.09,9499.0
+Daniel,R,"March 6, 1999",54,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1078,2078,3078,108.21,4166.32,-1081.38,6366.0
+Iron,Man,"August 15, 1949",65,"505 W. University Ave, El Paso, TX 79968",(915) 747-5005,1089,2089,3089,1483.37,351.75,-1936.25,3387.0
+Cesar,Padron,"August 11, 1974",93,"533 W. University Ave, El Paso, TX 79968",(915) 747-5033,1051,2051,3051,1658.87,2965.56,-1014.92,4803.0
+Daniel,G,"October 31, 1989",44,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1068,2068,3068,1229.16,1257.49,-489.7,4201.0
+Daniel,W,"September 14, 1999",59,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1083,2083,3083,995.19,4393.64,-1466.14,7161.0
+Brandon,Bustamante,"July 3, 1974",83,"523 W. University Ave, El Paso, TX 79968",(915) 747-5023,1041,2041,3041,1562.52,2225.8,-404.92,8084.0
+R2,D2,"October 31, 1985",74,"514 W. University Ave, El Paso, TX 79968",(915) 747-5014,1098,2098,3098,1265.6,3343.21,-583.92,3398.0
+Daniel,B,"October 26, 2011",39,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1063,2063,3063,886.52,106.41,-830.2,8126.0
+Daniel,E,"September 13, 1956",42,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1066,2066,3066,1027.97,4555.39,-1242.08,7453.0
+Beast,Disney,"December 18, 1995",20,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1019,2019,3019,1138.74,425.4,-839.49,9102.0
+Stitch,Disney,"January 27, 1948",36,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1035,2035,3035,1778.19,676.09,-1746.89,4752.0
+Lorenzo,Martinez,"March 6, 1957",87,"527 W. University Ave, El Paso, TX 79968",(915) 747-5027,1045,2045,3045,1935.1,4841.27,-1252.72,3981.0
+Daniel,A,"June 22, 1978",38,"1316 Disneyland Dr, Anaheim, CA 92802",(714) 781-4639,1062,2062,3062,1598.81,2872.69,-1750.13,3739.0
+Alfredo,Arce,"December 26, 1994",80,"520 W. University Ave, El Paso, TX 79968",(915) 747-5020,1038,2038,3038,1801.38,1148.48,-245.9,9688.0
+Daniel,I,"November 8, 2012",46,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1070,2070,3070,33.91,783.82,-257.37,8122.0
+Cinderella,Disney,"January 20, 1970",8,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1007,2007,3007,1511.87,1689.16,-1626.82,5102.0
+Evil,Queen,"October 17, 1987",29,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1028,2028,3028,1871.01,2594.68,-1854.41,6311.0
+C,3PO,"February 27, 1975",75,"515 W. University Ave, El Paso, TX 79968",(915) 747-5015,1099,2099,3099,216.35,2224.44,-1465.07,5491.0
+Alonso,Monarrez,"April 13, 1997",90,"530 W. University Ave, El Paso, TX 79968",(915) 747-5030,1048,2048,3048,1526.77,486.87,-579.97,4861.0
+Anakin,Skywalker,"April 25, 1992",76,"516 W. University Ave, El Paso, TX 79968",(915) 747-5016,1100,2100,3100,1417.21,3787.72,-1070.17,6635.0
+Ricardo,Mendez,"September 12, 1996",88,"528 W. University Ave, El Paso, TX 79968",(915) 747-5028,1046,2046,3046,17.66,3376.55,-1265.32,9722.0
+Bryan,Acosta,"June 4, 1973",79,"519 W. University Ave, El Paso, TX 79968",(915) 747-5019,1037,2037,3037,274.88,4459.83,-938.2,5404.0
+Minnie,Mouse,"May 17, 1959",3,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1002,2002,3002,966.83,3640.5,-1706.27,8750.0
+Daniel,D,"December 21, 2000",41,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1065,2065,3065,730.6,1470.79,-671.12,8583.0
+Daniel,N,"November 30, 2000",50,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1074,2074,3074,20.51,3606.5,-1712.22,4942.0
+Simba,King,"July 1, 1976",24,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1023,2023,3023,1133.22,83.27,-1506.23,3348.0
+Hercules,Disney,"November 2, 1955",33,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1032,2032,3032,1742.57,3573.7,-1568.44,8203.0
+Quasimodo,Disney,"December 9, 2013",32,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1031,2031,3031,111.41,3804.56,-572.7,4391.0
+Osvaldo,Nevarez,"December 15, 1997",92,"532 W. University Ave, El Paso, TX 79968",(915) 747-5032,1050,2050,3050,218.39,584.41,-1144.55,3371.0
+Mickey,Mouse,"July 11, 2009",1,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1000,2000,3000,2243.55,191.96,-1833.88,6637.0
+Abel,Carrasco,"December 12, 1994",84,"524 W. University Ave, El Paso, TX 79968",(915) 747-5024,1042,2042,3042,556.05,721.24,-1129.04,6105.0
+Jasmine,Disney,"June 25, 1955",10,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1009,2009,3009,1661.7,213.41,-1600.21,3855.0
+Aladdin,Disney,"April 20, 1989",11,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1010,2010,3010,916.14,2133.01,-747.39,7064.0
+Obi,Kenobi,"April 26, 1972",77,"517 W. University Ave, El Paso, TX 79968",(915) 747-5017,1101,2101,3101,1923.93,3936.15,-1659.74,3977.0
+Daniel,L,"May 18, 1996",49,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1073,2073,3073,435.4,2368.24,-1113.62,9429.0
+Daniel,Mejia,"May 30, 2000",37,"1315 Disneyland Dr, Anaheim, CA 92802",(714) 781-4638,1061,2061,3061,616.58,3794.07,-1347.2,6491.0
+Aurora,Disney,"May 10, 1961",14,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1013,2013,3013,217.65,2678.91,-1875.39,8871.0
+Simba,Disney,"December 27, 1997",12,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1011,2011,3011,448.71,2466.54,-1063.6,9729.0
+Cezar,Barba,"February 4, 1929",81,"521 W. University Ave, El Paso, TX 79968",(915) 747-5021,1039,2039,3039,1919.93,258.93,-784.68,8731.0
+Daniel,O,"August 15, 1963",51,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1075,2075,3075,818.14,4900.72,-55.93,9814.0
+Yoda,Jedi,"June 11, 2002",78,"518 W. University Ave, El Paso, TX 79968",(915) 747-5018,1102,2102,3102,462.24,3971.52,-1478.84,4506.0
+Daniel,T,"January 26, 1965",56,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1080,2080,3080,588.63,4752.75,-1938.81,7004.0
+Elizabeth,Reyes Jimenez,"October 21, 1966",97,"537 W. University Ave, El Paso, TX 79968",(915) 747-5037,1055,2055,3055,1511.45,1222.21,-826.94,6733.0
+Tigger,Pooh,"June 19, 2005",69,"509 W. University Ave, El Paso, TX 79968",(915) 747-5009,1093,2093,3093,1796.71,783.67,-173.07,6037.0
+Daniel,C,"June 11, 1983",40,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1064,2064,3064,241.48,4942.69,-1205.59,6813.0
+Tinker,Bell,"December 16, 2007",63,"503 W. University Ave, El Paso, TX 79968",(915) 747-5003,1087,2087,3087,1407.01,4055.41,-925.86,3416.0
+Axel,Diaz,"May 28, 1977",85,"525 W. University Ave, El Paso, TX 79968",(915) 747-5025,1043,2043,3043,358.56,2272.69,-18.91,8001.0
+Ruth,Trejo,"September 12, 1946",99,"539 W. University Ave, El Paso, TX 79968",(915) 747-5039,1057,2057,3057,175.56,4165.31,-562.38,7736.0
+Ursela,Mermaid,"August 24, 1956",19,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1018,2018,3018,1525.95,1543.14,-1600.28,6452.0
+Daniel,H,"December 22, 1989",45,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1069,2069,3069,1565.86,3940.58,-25.0,6019.0
+Daniel,J,"December 8, 1929",47,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1071,2071,3071,1956.59,416.29,-980.7,9706.0
+Mulan,Disney,"February 21, 1948",34,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1033,2033,3033,150.1,4878.35,-872.72,5427.0
+Pluto,Disney,"August 20, 2005",5,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1004,2004,3004,223.02,2652.08,-506.82,3633.0
+Daniel,P,"September 10, 1997",52,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1076,2076,3076,597.32,3037.79,-1886.33,9116.0
+Daniel,U,"March 19, 1989",57,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1081,2081,3081,976.28,3683.18,-1354.66,3576.0
+Dumbo,Elephant,"January 12, 1943",71,"511 W. University Ave, El Paso, TX 79968",(915) 747-5011,1095,2095,3095,1023.44,4424.46,-58.34,6831.0
+Buzz,Lightyear,"March 24, 1932",17,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1016,2016,3016,1794.77,487.27,-547.12,4735.0
+Woody,Disney,"January 25, 2009",16,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1015,2015,3015,1181.48,1565.61,-1008.55,6512.0
+Ariel,Disney,"June 4, 1944",9,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1008,2008,3008,798.34,2452.58,-43.46,6203.0
+Daniel,X,"October 22, 1945",60,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1084,2084,3084,882.54,34.67,-1981.62,6766.0
+Daniel,Q,"September 25, 1943",53,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1077,2077,3077,1183.1,1037.68,-1436.3,6809.0
+Jeffrey,Vanarsdall,"May 20, 1953",100,"540 W. University Ave, El Paso, TX 79968",(915) 747-5040,1058,2058,3058,755.28,373.78,-528.74,3685.0
+Captain,Hook,"July 30, 1967",27,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1026,2026,3026,484.05,4445.2,-528.08,8436.0
+Belle,Disney,"September 12, 1955",21,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1020,2020,3020,1947.03,1361.39,-790.12,5572.0
+Lilo,Disney,"May 31, 1996",35,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1034,2034,3034,1822.95,4893.41,-751.14,5591.0
+Eyan,Meraz,"August 7, 1959",89,"529 W. University Ave, El Paso, TX 79968",(915) 747-5029,1047,2047,3047,633.39,1023.71,-605.31,4542.0
+Jafar,Aladdin,"March 27, 1933",18,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1017,2017,3017,1811.01,389.03,-1508.49,9507.0
+Peter,Parker,"July 19, 1963",64,"504 W. University Ave, El Paso, TX 79968",(915) 747-5004,1088,2088,3088,672.93,915.09,-1495.52,5882.0
+Captain,America,"December 5, 1958",67,"507 W. University Ave, El Paso, TX 79968",(915) 747-5007,1091,2091,3091,642.69,4967.83,-1789.47,4409.0
+Alan,Licerio,"April 19, 1946",86,"526 W. University Ave, El Paso, TX 79968",(915) 747-5026,1044,2044,3044,413.43,1924.91,-795.25,4006.0
+Dale,Disney,"November 7, 1966",7,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1006,2006,3006,1994.49,2220.87,-1945.24,7091.0
+Gaston,Disney,"June 28, 1992",25,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1024,2024,3024,391.96,195.88,-232.49,5554.0
+Scar,Lion,"April 13, 2011",23,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1022,2022,3022,498.98,979.02,-516.25,4897.0
+Peter,Pan,"September 18, 1966",15,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1014,2014,3014,1889.73,2763.26,-491.21,8453.0
+Daniel,Z,"January 2, 1940",62,"502 W. University Ave, El Paso, TX 79968",(915) 747-5002,1086,2086,3086,349.46,4881.84,-908.86,8628.0
+Roy,Disney,"August 1, 1950",73,"513 W. University Ave, El Paso, TX 79968",(915) 747-5013,1097,2097,3097,1484.62,2685.79,-130.48,3140.0
+Hector,Reyes,"June 9, 1968",96,"536 W. University Ave, El Paso, TX 79968",(915) 747-5036,1054,2054,3054,1479.22,1697.59,-1025.81,9423.0
+Prince,Eric,"May 23, 1962",31,"1313 Disneyland Dr, Anaheim, CA 92802",(714) 781-4636,1030,2030,3030,818.81,1540.55,-509.16,4418.0
+Luis,Renteria,"September 1, 1954",95,"535 W. University Ave, El Paso, TX 79968",(915) 747-5035,1053,2053,3053,618.12,4448.84,-517.38,8597.0
+Walt,Disney,"October 28, 1954",72,"512 W. University Ave, El Paso, TX 79968",(915) 747-5012,1096,2096,3096,779.72,1812.28,-787.37,3044.0
+Daniel,K,"April 19, 1978",48,"500 W. University Ave, El Paso, TX 79968",(915) 747-5000,1072,2072,3072,285.98,4880.17,-1141.57,5904.0
