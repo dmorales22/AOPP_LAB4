@@ -14,6 +14,10 @@ alone.
 
 import java.io.*;
 import java.util.*;
+
+/**This abstract class file contains all personal account information
+ * @author Axel Diaz
+ */
 public abstract class Person {
     protected String address;// Person
     protected String lastName;// Person
@@ -24,8 +28,18 @@ public abstract class Person {
     protected int idNum; 
 
     public Person(){
-
     }
+
+    /**Person constructor with all attributes 
+	 * @param fN First name.
+	 * @param lN Last name.
+	 * @param dob Date of birth.
+	 * @param ad Address.
+	 * @param pN Phone number.
+	 * @param eM Email.
+	 * @param id ID number.
+	 * @author Axel Diaz 
+	 */
     public Person(String fN, String lN, String dob, String ad, String pN, String eM, int id){
         this.address = ad;
         this.dob = dob;

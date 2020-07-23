@@ -14,8 +14,12 @@ alone.
 
 import java.io.*;
 import java.util.*;
+import java.text.SimpleDateFormat;
 
-public class Customer extends Person {
+/**This class contains all personal and account information. 
+ * @author Axel Diaz
+*/
+public class Customer extends Person implements Printable {
     private Checking myChecking;
     private Savings mySavings;
     private Credit myCredit;
@@ -24,7 +28,20 @@ public class Customer extends Person {
     public Customer() { //Default constructor 
         super();
     }
-
+    /**Customer constructor with all attributes 
+	 * @param fN First name.
+	 * @param lN Last name.
+	 * @param dob Date of birth.
+	 * @param ad Address.
+	 * @param pN Phone number.
+	 * @param eM Email.
+	 * @param id ID number.
+	 * @param uC Checking account.
+	 * @param uS Savings account.
+	 * @param uCr Credit account.
+	 * @param pS Password. 
+	 * @author Axel Diaz 
+	 */
     public Customer(String fN, String lN, String dob, String ad, String pN, String eM, int id, Checking uC, Savings uS, Credit uCr, String pS) { 
         super(fN, lN, dob, ad, pN, eM, id);
         this.myChecking = uC;
@@ -67,9 +84,104 @@ public class Customer extends Person {
         return password;
     }
 
+    /** This print method prints all the individual user information 
+    * @author Axel Diaz 
+    */
+    public void print(){
+        System.out.println("BANK USER INFORMATION");
+        System.out.println("First Name: " + firstName);
+        System.out.println("Last Name: " + lastName);
+        System.out.println("Date of Birth: " + dob);
+        System.out.println("Address: " + address);
+        System.out.println("Phone Number: " + phoneNum);
+        System.out.println("Email:" + email);
+        System.out.println("Password: " + password);
+        System.out.println("Identification Number: " + idNum);
+        System.out.println("");
+        System.out.println(myChecking.toString());
+        System.out.println(mySavings.toString());
+        System.out.println(myCredit.toString());
+        System.out.println("");
+    }
+
+    /** This print method prints all the individual user transactions. 
+     * @author Axel Diaz 
+     */
+    public void printTransactionLog() {
+        System.out.println("BANK USER TRANSACTIONS");
+        System.out.println("Checking Account History:");
+        for(int i = 0; i < myChecking.getTransactionLog().size(); i++) { //Prints out checking account transactions
+			System.out.println(myChecking.getTransactionLog().get(i));
+		}
+
+		System.out.println("Savings Account History:");
+
+		for(int i = 0; i < mySavings.getTransactionLog().size(); i++) { //Prints out savings account transactions
+			System.out.println(mySavings.getTransactionLog().get(i));
+		}
+
+		System.out.println("Credit Account History:"); 
+
+		for(int i = 0; i < myCredit.getTransactionLog().size(); i++) { //Prints out credit account transactions
+			System.out.println(myCredit.getTransactionLog().get(i));
+		}
+		System.out.println("");
+    }
+
+	/** This print method prints the individual user bank statement. 
+	 * @author Axel Diaz 
+	*/
+    public void printBankStatement() { 
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy-HH:mm:ss");
+		Date date = new Date();
+
+		System.out.println("David Axel Bank Statement            Date:" + date);
+		System.out.println("-----------------------------------------------------------");
+		System.out.println("Name: " + firstName + " " + lastName);
+		System.out.println("Date of Birth: " + dob); 
+		System.out.println("Identification Number: " + idNum);
+		System.out.println("Address: " + address);
+		System.out.println("Phone Number: " + phoneNum);
+		System.out.println("");
+		System.out.println("Checking Account Number: " + myChecking.getAccountNum());
+		System.out.println("Savings Account Number: " + mySavings.getAccountNum());
+		System.out.println("Credit Account Number: " + myCredit.getAccountNum());
+		System.out.println("");
+		System.out.println("Checking Starting Balance: $" + myChecking.getStartingBalance());
+		System.out.println("Savings Starting Balance: $" + mySavings.getStartingBalance());
+		System.out.println("Credit Starting Balance: $" + myCredit.getStartingBalance());
+		System.out.println("");
+		System.out.println("Checking Current Balance: $" + myChecking.getCurrentBalance());
+		System.out.println("Savings Current Balance: $" + mySavings.getCurrentBalance());
+		System.out.println("Credit Current Balance: $" + myCredit.getCurrentBalance());
+		System.out.println("");
+		System.out.println("Transaction History:");
+		System.out.println("-----------------------------------------------------------");
+		System.out.println("Checking Account History:");
+
+		for(int i = 0; i < myChecking.getTransactionLog().size(); i++) { //Prints out checking account transactions
+			System.out.println(myChecking.getTransactionLog().get(i));
+		}
+
+		System.out.println("Savings Account History:");
+
+		for(int i = 0; i < mySavings.getTransactionLog().size(); i++) { //Prints out savings account transactions
+			System.out.println(mySavings.getTransactionLog().get(i));
+		}
+
+		System.out.println("Credit Account History:"); 
+
+		for(int i = 0; i < myCredit.getTransactionLog().size(); i++) { //Prints out credit account transactions
+			System.out.println(myCredit.getTransactionLog().get(i));
+		}
+		
+		System.out.println("");
+    }
+
 	/**
 	 * Returns all user account info
 	 * @return All account info
+	 * @author David Morales
 	 */
 	public String toString() {
 		return "First Name: " + firstName + "\nLast Name: " + lastName + "\nDate of Birth: " + dob + "\nAddress: " + address + "\nPhone Number: " + phoneNum + "\nEmail:" + email + "\nIdentification Number: " + idNum + "\n" + this.getChecking().toString() + "\n" + this.getSavings().toString() + "\n" + this.getCredit().toString();

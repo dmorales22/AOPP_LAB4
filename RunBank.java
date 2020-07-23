@@ -30,7 +30,8 @@ public class RunBank {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException, ArrayIndexOutOfBoundsException{
 		/** Main starts the necessary beginning functions for the user menus. Filename is inputed from args in command line
-		 * 
+		 * @param args The argument passed through the command line. 
+		 * @author David Morales
 		 */
 		try {
 			filename = args[0];

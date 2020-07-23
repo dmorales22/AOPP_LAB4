@@ -12,9 +12,12 @@ but not limited to the source code, lab report and output files were written and
 alone.
 */
 
+/** The interface that prints information about bank user
+* @author Axel Diaz 
+*
+*/
 public interface Printable {
-	public void print(Customer bankUser);
-	public void printTransactionLog(Customer bankUser);
-	public void printBankStatement(Customer bankUser);
-	
+	public void print();
+	public void printTransactionLog();
+	public void printBankStatement();
 }

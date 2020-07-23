@@ -14,12 +14,24 @@ alone.
 import java.io.*;
 import java.util.*;
 
+/**This class file contains checking account information
+ * @author Axel Diaz
+ */
 public class Credit extends Account {
     private double creditMax;// Credit class
 
     public Credit(){
     }
 
+    /**
+     * This class inherits from Account, no added attributes.
+     * @param creditNumber Credit account number.
+     * @param creditStartBalance Credit starting account balance.
+     * @param creditCurrentBalance Credit current account balance. 
+     * @param creditTransactionLog Transaction log for account.
+     * @param creditMax The credit max for the account. 
+     * @author Axel Diaz
+     */
     public Credit(int creditNumber, double creditStartBalance, double creditCurrentBalance, ArrayList<String> creditTransactionLog, double creditMax) {
         super(creditNumber, creditStartBalance, creditCurrentBalance, creditTransactionLog);
         this.creditMax = creditMax;
@@ -38,6 +50,7 @@ public class Credit extends Account {
 	/**
 	 * Returns credit account info
 	 * @return Credit account info
+	 * @author David Morales
 	 */
 	@Override
 	public String toString() {

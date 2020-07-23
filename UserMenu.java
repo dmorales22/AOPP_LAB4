@@ -12,26 +12,25 @@ but not limited to the source code, lab report and output files were written and
 alone.
 */
 
-
 import java.io.*;
 import java.util.*;
 import java.text.SimpleDateFormat;
 
-/**This class contains methods for banking user interface
- * @author David Morales
+/**This class contains methods for banking menu for the user to use. 
+ * @author David Morales 
  */
 public class UserMenu {
 
 /*------------------------------------User Menus-----------------------------------------------*/
 
 	/**This method is a menu shows bank manager options. Options are for account search and detailed info for each bank user. 
-	 * 
+	 * @author David Morales
 	 */
 	public static void bankManagerOptions() throws IOException {
 		try {
 			System.out.println("Welcome bank manager!");
-			System.out.println("[0] Inquire user by name");
-			System.out.println("[1] Inquire user by account type/number");
+			System.out.println("[0] Inquire user by name (with option to print bank statement)");
+			System.out.println("[1] Inquire user by account type/number (with option to print bank statement)");
 			System.out.println("[2] Print all users detailed information");
 			System.out.println("[3] Return to user menu");
 			System.out.println("[4] Exit program");
@@ -89,6 +88,7 @@ public class UserMenu {
 
 							System.out.println(bankUser.toString()); //Prints all user info.
 							bankStatementMenu(bankUser);
+							bankManagerOptions();
 							return;
 
 						case 1: //Searching for savings account numbers
@@ -102,6 +102,7 @@ public class UserMenu {
 
 							System.out.println(bankUser.toString()); //Prints all user info
 							bankStatementMenu(bankUser);
+							bankManagerOptions();
 							return;
 
 						case 2: //Searching for credit account numbers 
@@ -116,6 +117,7 @@ public class UserMenu {
 
 							System.out.println(bankUser.toString());
 							bankStatementMenu(bankUser);
+							bankManagerOptions();
 							return;
 					}
 
@@ -147,6 +149,7 @@ public class UserMenu {
 	/**This method opens another menu for the user(bank manager) to write a bank statement on 
 	* that specific user.
 	*@param bankUser Passes specific bank user (Customer object) to use make the bank statement.
+	* @author David Morales
 	*/
 	public static void bankStatementMenu(Customer bankUser) throws IOException {
 		try {
@@ -158,13 +161,11 @@ public class UserMenu {
 			int userInputInt = UserUtilities.userInputInteger(0);
 			
 			if(userInputInt == -1 || userInputInt == -2) {
-				bankManagerOptions();
 				return;
 			}
 
 			BankStatement userStatement = new BankStatement(bankUser, dateStr);
 			userStatement.createBankStatement();
-			bankManagerOptions();
 			return;
 		}
 
@@ -174,7 +175,7 @@ public class UserMenu {
 	}
 
 	/**This method prints all users for the user to select their account. 
-	 * 
+	 * @author David Morales
 	 */
 	public static void userMenu() throws IOException {
 		try {
@@ -201,7 +202,7 @@ public class UserMenu {
 			}
 
 			switch(userInputInt) {
-				case 0:
+				case 0: //Account search by name
 					bankUser = UserUtilities.accountNameSearch();
 
 					if(bankUser == null) {
@@ -210,7 +211,7 @@ public class UserMenu {
 						return;
 					}
 
-					if(UserUtilities.passwordChecker(bankUser)) {
+					if(UserUtilities.passwordChecker(bankUser)) { //Password checker
 						accountMenu(bankUser);
 						return;
 					}
@@ -218,23 +219,30 @@ public class UserMenu {
 					userMenu();
 					return;
 
-				case 1:
-					System.out.println("What kind of account?");
+				case 1: //Account search by number
+					System.out.println("What kind of account?"); 
 					System.out.println("[0] Checking");
 					System.out.println("[1] Savings");
 					System.out.println("[2] Credit");
 
-					userInputInt = UserUtilities.userInputInteger(3);
-					System.out.println("What is the account #?");
-					bankUser = UserUtilities.accountNumSearch(userInputInt);
+					userInputInt = UserUtilities.userInputInteger(2);
 
-					if(bankUser == null) {
+					if(userInputInt == -1 || userInputInt == -2) {
 						System.out.println("Invalid input. Try again.");
 						userMenu();
 						return;
 					}
 
-					if(UserUtilities.passwordChecker(bankUser)) {
+					System.out.println("What is the account #?");
+					bankUser = UserUtilities.accountNumSearch(userInputInt);
+
+					if(bankUser == null) { //If bank user is not found 
+						System.out.println("Bank user not found or invalid input. Try again.");
+						userMenu();
+						return;
+					}
+
+					if(UserUtilities.passwordChecker(bankUser)) { //Password checker
 						accountMenu(bankUser);
 						return;
 					}
@@ -243,15 +251,15 @@ public class UserMenu {
 					return;
 
 				case 2:
-					createAccountMenu();
+					createAccountMenu(); //Account creation menu
 					return;
 
 				case 3:
-					bankManagerOptions();
+					bankManagerOptions(); //Opens bank manager menu
 					return;
 
 				case 4:
-					UserUtilities.transactionReader();
+					UserUtilities.transactionReader(); //Reads transactions from csv 
 					userMenu();
 					return;
 			}
@@ -264,7 +272,7 @@ public class UserMenu {
 		}
 	}
 	/**This method prints is a user menu to create new bank users. 
-	 * 
+	 * @author David Morales
 	 */
 	public static void createAccountMenu() throws IOException{
 		try {
@@ -348,7 +356,7 @@ public class UserMenu {
 				newCredit.setTransactionLog(transactionLogCredit);
 				newCredit.setCreditMax(2500.0);
 			}
-
+			//Creates the new account 
 			Customer newCustomer = new Customer(firstName, lastName, dateOfBirth, address, phoneNumber, email, RunBank.maxIDNum, newChecking, newSavings, newCredit, password);
 			RunBank.hashMapAccountNums.set(0, checkingHash); 
 			RunBank.hashMapAccountNums.set(1, savingsHash);
@@ -369,6 +377,7 @@ public class UserMenu {
 	/**This method loads the individual bank user's options. Here is where you can use the bank actions and the user inputs the following
 	 * options. It allows the user to select individual account types, and allows the inquire their balances. 
 	 *@param bankUser The user selected bank user where transactions are coming from
+	 *@author David Morales
 	 */
 	public static void accountMenu(Customer bankUser)  throws IOException {
 		try {
@@ -378,11 +387,13 @@ public class UserMenu {
 			System.out.println("[1] Savings account at #" + bankUser.getSavings().getAccountNum());
 			System.out.println("[2] Credit account at #" + bankUser.getCredit().getAccountNum());
 			System.out.println("[3] View balances of accounts");
-			System.out.println("[4] Write bank statement");
-			System.out.println("[5] Return to main menu (log out)");
-			System.out.println("[6] Exit program");
+			System.out.println("[4] View all account information");
+			System.out.println("[5] Write bank statement");
+			System.out.println("[6] View bank statement");
+			System.out.println("[7] Return to main menu (log out)");
+			System.out.println("[8] Exit program");
 
-			int userInputInt = UserUtilities.userInputInteger(5);
+			int userInputInt = UserUtilities.userInputInteger(8);
 			
 			if(userInputInt == -1 || userInputInt == -2) {
 				accountMenu(bankUser); //Reloads menu if input is invalid 
@@ -434,17 +445,17 @@ public class UserMenu {
 						}
 
 						switch(userInputInt) { //Switch statement for inquiry menu.
-							case 0:
+							case 0: //Inquiry for checking
 								UserTransactions.inquiryAccount(bankUser, 0);
 								accountMenu(bankUser);
 								return;
 
-							case 1:
+							case 1: //Inquiry for savings
 								UserTransactions.inquiryAccount(bankUser, 1);
 								accountMenu(bankUser);
 								return;
 
-							case 2:
+							case 2: //Inquiry for credit 
 								UserTransactions.inquiryAccount(bankUser, 2);
 								accountMenu(bankUser);
 								return;
@@ -452,15 +463,32 @@ public class UserMenu {
 						break;
 
 				case 4:
-					System.out.println("Finish user bankstatement here.");
-					break;
+					bankUser.print(); //Prints all account information
+					accountMenu(bankUser);
+					return;
 
-				case 5: //Returns to main menu
+				case 5: //Create bank statement
+					SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy-HH:mm:ss");
+					Date date = new Date();
+					String dateStr = formatter.format(date);
+	
+					BankStatement userStatement = new BankStatement(bankUser, dateStr);
+					userStatement.createBankStatement();
+					System.out.println("Bank statement for " + bankUser.getFirstName() + ", has been written."); 
+					accountMenu(bankUser);
+					return;
+
+				case 6: //Prints bank statement
+					bankUser.printBankStatement();
+					accountMenu(bankUser);
+					return;
+
+				case 7: //Returns to main menu
 					System.out.println("Goodbye, " + bankUser.getFirstName());
 					userMenu();
 					break;
 
-				case 6: //Exits program
+				case 8: //Exits program
 					System.out.println("Goodbye, " + bankUser.getFirstName());
 					UserUtilities.updateDatabase(RunBank.bankUserList);
 					System.exit(0);
@@ -476,6 +504,7 @@ public class UserMenu {
 	/**User menu for transaction options for the user. It allows the user to withdraw, deposit, and send money. 
 	 * @param bankUser The user selected bank user where transactions are coming from
 	 * @param accountType The account type (checking, savings, credit) the user is making transactions from.
+	 * @author David Morales
 	*/
 	public static void transactionMenu(Customer bankUser, int accountType) throws IOException {
 		try {
@@ -577,6 +606,7 @@ public class UserMenu {
 	 * send money to from and to the same account. Use cases are used for different banking scenarios. 
 	 * @param bankUser The user selected bank user where transactions are coming from
 	 * @param accountType The account type (checking, savings, credit) the user is making transactions from.
+	 * @author David Morales
 	*/
 	public static void transferMoneyMenu(Customer bankUser, int accountType) throws IOException {
 		try {
@@ -646,6 +676,11 @@ public class UserMenu {
 
 							UserTransactions.withdrawAccount(moneyVal, 2, bankUser);
 
+							if(bankUser.getCredit().getCreditMax() < -(bankUser.getCredit().getCurrentBalance() - moneyVal)) {
+								transferMoneyMenu(bankUser, accountType);
+								return;
+							}
+
 							UserTransactions.depositAccount(moneyVal, 0, bankUser);
 							break;
 					}
@@ -685,7 +720,12 @@ public class UserMenu {
 							}
 
 							UserTransactions.withdrawAccount(moneyVal, 2, bankUser);
-							//Insert if statement here
+
+							if(bankUser.getCredit().getCreditMax() < -(bankUser.getCredit().getCurrentBalance() - moneyVal)) {
+								transferMoneyMenu(bankUser, accountType);
+								return;
+							}
+
 							UserTransactions.depositAccount(moneyVal, 1, bankUser);
 							break;
 					}
@@ -761,7 +801,7 @@ public class UserMenu {
 		}
 	}
 
-	/** This method opens a seperate menu to send money to different bank users. 
+	/** This method opens a separate menu to send money to different bank users. 
 	 * @param bankUser The user selected bank user where transactions are coming from
 	 * @param accountType The account type (checking, savings, credit) the user is making transactions from.
 	 * @param moneyVal The user inputted (from transferMoneyMenu) money amount they want to send. 
@@ -798,8 +838,8 @@ public class UserMenu {
 				return;
 			}
 
-			switch(accountType) {
-				case 0:
+			switch(accountType) { //Sends money to other user account type
+				case 0: //Sending to other user's checking
 					if(otherUser.getChecking().getAccountNum() == 0) { //Checks if account exists
 						System.out.println("Account doesn't exist.");
 						sendMoneyToAnotherAccount(bankUser, accountType, moneyVal);
@@ -808,7 +848,8 @@ public class UserMenu {
 
 					UserTransactions.payAccount(bankUser, otherUser, moneyVal, userInputInt, accountType);  //Transfers money from one account to another
 					break;
-				case 1:
+
+				case 1: //Sending to other user's savings
 					if(otherUser.getSavings().getAccountNum() == 0) {
 						System.out.println("Account doesn't exist.");
 						sendMoneyToAnotherAccount(bankUser, accountType, moneyVal);
@@ -817,7 +858,8 @@ public class UserMenu {
 
 					UserTransactions.payAccount(bankUser, otherUser, moneyVal, userInputInt, accountType);
 					break;
-				case 2:
+
+				case 2: //Sending to other user's credit 
 					if(otherUser.getCredit().getAccountNum() == 0) {
 						System.out.println("Account doesn't exist.");
 						sendMoneyToAnotherAccount(bankUser, accountType, moneyVal);
@@ -828,7 +870,7 @@ public class UserMenu {
 					break;
 			}
 
-			transactionMenu(bankUser, accountType);
+			transactionMenu(bankUser, accountType); //Returns back to menu 
 		}
 
 		catch(IOException ioEx) { 

@@ -11,12 +11,25 @@ I declare that I did not receive unauthorized assistance. Moreover, all delivera
 but not limited to the source code, lab report and output files were written and produced by me
 alone.
 */
+
 import java.io.*;
 import java.util.*;
+
+/**This class file contains checking account information
+ * @author Axel Diaz
+ */
 public class Savings extends Account {
     public Savings() {
     }
 
+    /**
+     * This class inherits from Account, no added attributes.
+     * @param savingsNumber Savings account number.
+     * @param savingsStartBalance Savings starting account balance.
+     * @param savingsCurrentBalance Savings current account balance. 
+     * @param savingsTransactionLog Transaction log for account.
+     * @author Axel Diaz
+     */
     public Savings(int savingsNumber, double savingsStartBalance, double savingsCurrentBalance, ArrayList<String> savingsTransactionLog) {
         super(savingsNumber, savingsStartBalance, savingsCurrentBalance, savingsTransactionLog);
     }
@@ -24,6 +37,7 @@ public class Savings extends Account {
 	/**
 	 * Returns savings account info
 	 * @return Savings account info
+	 * @author David Morales
 	 */
 	@Override
 	public String toString() {

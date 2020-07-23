@@ -1,10 +1,10 @@
 /*
-Name: David Morales
-Date: 07/10/2020
+Name: David Morales and Axel Diaz 
+Date: 07/26/2020
 Course: Advanced Object-Oriented Programming
 Instructor: Dr. Daniel Mejia
-Lab Assignment: Programming Assignment 3
-Lab Description: Simple bank program w/ extended features.
+Lab Assignment: Programming Assignment 4
+Lab Description: Bank program.
 
 I confirm that the work of this assignment is completely my own. By turning in this assignment,
 I declare that I did not receive unauthorized assistance. Moreover, all deliverables including,
@@ -17,17 +17,20 @@ import java.util.*;
 import java.text.SimpleDateFormat;
 
 /**This class file contains checking account information
- * @author David Morales
+ * @author Axel Diaz
  */
 public class Checking extends Account{
 	public Checking() {
 	}
 
-	/**
-	 * This class inherits from Account, no added attributes.
-	 * @param accountNum Checking account number
-	 * @param accountBalance Checking account balance
-	 */
+    /**
+     * This class inherits from Account, no added attributes.
+     * @param accountNum Checking account number.
+     * @param startingBalance Checking starting account balance.
+     * @param currentBalance Checking current account balance. 
+     * @param tL Transaction log for account.
+     * @author Axel Diaz
+     */
 	public Checking(int accountNum, double startingBalance, double currentBalance, ArrayList<String> tL) {
 		super(accountNum, startingBalance, currentBalance, tL);
 	}
@@ -35,6 +38,7 @@ public class Checking extends Account{
 	/**
 	 * Returns checking account info
 	 * @return Checking account info
+	 * @author David Morales
 	 */
 	@Override
 	public String toString() {

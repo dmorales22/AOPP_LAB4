@@ -18,7 +18,7 @@ import java.util.*;
 /**This class contains methods for banking functions
  * @author David Morales
  */
-public class UserUtilities implements Printable {
+public class UserUtilities {
 
 	/*------------------------------Helper/Utility Methods----------------------------------*/
 
@@ -26,6 +26,7 @@ public class UserUtilities implements Printable {
 	 * and returns the user found. Returns null if no user is found.
 	 * @param accountType The account type the user is searching for. Serves as an index to get the specific hash map from hashMapAccountNums.
 	 * @return The found user.
+	 * @author David Morales
 	 */
 	public static Customer accountNumSearch(int accountType) {
 		try {
@@ -53,6 +54,7 @@ public class UserUtilities implements Printable {
 	* @param firstName User's first name
 	* @param lastName user's last name
 	* @return returns found user
+	* @author David Morales
 	*/
 	public static Customer accountNameSearchForReader(String firstName, String lastName) {
 		Scanner userIn = new Scanner(System.in);
@@ -74,14 +76,15 @@ public class UserUtilities implements Printable {
 
 	/** This method searches for accounts by name. It uses linear search O(n) to find the bank user. This is the slow search.
 	 * @return Found user
+	 * @author David Morales
 	 */
 	public static Customer accountNameSearch() {
 		ArrayList<Customer> sameNameUserList = new ArrayList<Customer>(); 
 		Scanner userIn = new Scanner(System.in);
 		Customer bankUser;
-		System.out.println("Please input first name: "); //Gets first and last name from user
+		System.out.println("Please input first name: (case sensitive)"); //Gets first and last name from user
 		String userInput = userIn.nextLine();
-		System.out.println("Please input last name: ");
+		System.out.println("Please input last name: (case sensitive)");
 		userInput = userInput + " " + userIn.nextLine();
 		String bankUserName;
 		System.out.println("");
@@ -121,6 +124,7 @@ public class UserUtilities implements Printable {
 	/** This is user input validation for selecting options on the menu.
 	 * @param rangeLimit This ensures a specific range of numbers allowed for user input
 	 * @return Returns converted string to int. 
+	 * @author David Morales
 	 */
 	public static int userInputInteger(int rangeLimit) { //User input validation 
 		Scanner userIn = new Scanner(System.in);
@@ -146,6 +150,7 @@ public class UserUtilities implements Printable {
 
 	/** This method does input validation for double values (when user inputs money)
 	 * @return Returns converted string into double
+	 * @author David Morales
 	 */
 	public static double userInputDouble() {
 		Scanner userIn = new Scanner(System.in);
@@ -166,6 +171,7 @@ public class UserUtilities implements Printable {
 
 	/**This method reads bank user(s) info from a .csv file, creates objects, and adds them into a array list. 
 	 * @return An arrayList of all bank user objects
+	 * @author David Morales
 	 */
 	public static ArrayList<Customer> fileReader() throws FileNotFoundException, IOException {
 		try {
@@ -210,7 +216,7 @@ public class UserUtilities implements Printable {
 			while ((strLine = textReader.readLine()) != null) { //This loop adds new users line by line
 				tokenizedLine = fileParser(strLine, stringSize); //Tokenizes each line in the textfile.
 
-				if(tokenizedLine[tokenIndex.get("First Name")].equals("") || tokenizedLine[tokenIndex.get("Last Name")].equals("") || tokenizedLine[tokenIndex.get("Phone Number")].equals("")) {
+				if(tokenizedLine[tokenIndex.get("First Name")].equals("") || tokenizedLine[tokenIndex.get("Last Name")].equals("") || tokenizedLine[tokenIndex.get("Phone Number")].equals("")) { //Prevents empty space rows for being added.
 					continue;
 				}
 
@@ -280,9 +286,10 @@ public class UserUtilities implements Printable {
 	}
 
 	/**A simple method to replace a lower value with a higher value.
-	*@param oldNum Older number to be compared to
-	*@param newNum Newer number to be compared to
-	*@return returns higher value
+	 * @param oldNum Older number to be compared to
+	 * @param newNum Newer number to be compared to
+	 * @return returns higher value
+	 * @author David Morales
 	*/
 	public static int findMaxValue(int oldNum, int newNum) { 
 		if(newNum > oldNum) {
@@ -293,7 +300,7 @@ public class UserUtilities implements Printable {
 
 	/**This method reads the transaction file and with the use of switch cases statements, 
 	* it directs the information to execute commands in the banking system.
-	*
+	* @author David Morales
 	*/
 	public static void transactionReader() throws FileNotFoundException, IOException {
 		try {
@@ -520,8 +527,9 @@ public class UserUtilities implements Printable {
 	}
 
 	/**This method gets the bank user list and gets specific indexes in the csv file
-	*@param headerString Takes the tokenized header string from the csv
-	*@return A hashmap has strings as keys, and specific indexes where they correlate.  
+	 * @param headerString Takes the tokenized header string from the csv
+	 * @return A hashmap has strings as keys, and specific indexes where they correlate. 
+	 * @author David Morales
 	*/
 	public static HashMap<String, Integer> dynamicParser(String[] headerString) {
 		String header;
@@ -631,6 +639,7 @@ public class UserUtilities implements Printable {
 	 * @param strLine A unparsed string (a whole line from the .csv)
 	 * @param numOfElements The number (int) of elements that would be parsed from the file
 	 * @return Returns tokenized string
+	 * @author David Morales
 	 */
 	public static String[] fileParser(String strLine, int numOfElements) {
 		String[] tokenizedLine = new String[numOfElements]; 
@@ -696,6 +705,7 @@ public class UserUtilities implements Printable {
 	/**This method parses id number from the textfile and returns the integer representation 
 	 * @param strIdNum String version of ID numbers
 	 * @return Returns a parsed (String to int) ID number 
+	 * @author David Morales
 	 */
 	public static int idNumParser(String strIdNum) {
 		String parsedNum = ""; 
@@ -712,6 +722,7 @@ public class UserUtilities implements Printable {
 
 	/**Prints all users for the menu.
 	 * @param bankUsers This arrayList contains all bank users (Customer) 
+	 * @author David Morales
 	 */
 	public static void printUsers(ArrayList<Customer> bankUsers) { 
 		Customer iter;
@@ -723,6 +734,7 @@ public class UserUtilities implements Printable {
 
 	/**Rewrites the .csv with updated information
 	 * @param bankUserList The arrayList of all bank users and their attributes/info
+	 * @author David Morales
 	 */
 	public static void updateDatabase(ArrayList<Customer> bankUserList) throws IOException {
 		try {
@@ -731,12 +743,12 @@ public class UserUtilities implements Printable {
 			PrintWriter textWriter = new PrintWriter(bw);
 			Customer temp;
 
-			textWriter.println("First Name,Last Name,Date of Birth,Identification Number,Address,Phone Number,Checking Account Number,Savings Account Number,Credit Account Number,Checking Starting Balance,Savings Starting Balance,Credit Starting Balance,Credit Max"); //Writes the header info on first line
+			textWriter.println("First Name,Last Name,Date of Birth,Identification Number,Address,Phone Number,Checking Account Number,Savings Account Number,Credit Account Number,Checking Starting Balance,Savings Starting Balance,Credit Starting Balance,Email,Password,Credit Max"); //Writes the header info on first line
 
 			//This for loop writes all the updated info from the objects in the same file 
 			for(int i = 0; i < bankUserList.size(); i++) {
 				temp = bankUserList.get(i); 
-				textWriter.println(temp.getFirstName() + "," + temp.getLastName() + "," + temp.getDob() + "," + temp.getIdNum() + "," + temp.getAddress() + "," + temp.getPhoneNum() + "," + temp.getChecking().getAccountNum() + "," + temp.getSavings().getAccountNum() + "," + temp.getCredit().getAccountNum() + "," + temp.getChecking().getCurrentBalance() + "," + temp.getSavings().getCurrentBalance() + "," + temp.getCredit().getCurrentBalance() + "," + temp.getCredit().getCreditMax()); //Writes in the same format
+				textWriter.println(temp.getFirstName() + "," + temp.getLastName() + "," + temp.getDob() + "," + temp.getIdNum() + "," + temp.getAddress() + "," + temp.getPhoneNum() + "," + temp.getChecking().getAccountNum() + "," + temp.getSavings().getAccountNum() + "," + temp.getCredit().getAccountNum() + "," + temp.getChecking().getCurrentBalance() + "," + temp.getSavings().getCurrentBalance() + "," + temp.getCredit().getCurrentBalance() + "," + temp.getEmail() + "," + temp.getPassword() + "," + temp.getCredit().getCreditMax()); //Writes in the same format
 			}
 
 			textWriter.close();
@@ -750,6 +762,7 @@ public class UserUtilities implements Printable {
 	/**Checks if string input are numbers using try/catch exceptions.
 	 * @param input The user inputted String
 	 * @return Returns true if string is a number
+	 * @author David Morales
 	 */
 	public static boolean isInputValid(String input) { 
 		try {
@@ -765,6 +778,7 @@ public class UserUtilities implements Printable {
 	/**Checks if string input are double numbers using try/catch exceptions.
 	 * @param input The user inputted String
 	 * @return Returns true if string a number
+	 * @author David Morales
 	 */
 	public static boolean isInputValidDouble(String input) { 
 		try {
@@ -777,23 +791,29 @@ public class UserUtilities implements Printable {
 		}
 	}
 
+	/**Checks user password using a string comparison.
+	* @param bankUser The bank user account.
+	* @return Returns true or false about the user's password.
+	* @author Axel Diaz 
+	*/
 	public static boolean passwordChecker(Customer bankUser) {
 		Scanner userIn = new Scanner(System.in);
 		System.out.println("Please input user password: ");
 		String userInput = userIn.nextLine();
 
 		if(userInput.equals(bankUser.getPassword())) {
-			System.out.println("Login success!");
+			System.out.println("Login success! \n");
 			return true; 
 		}
 
-		System.out.println("Invalid password. Try again.");
+		System.out.println("Invalid password. Try again. \n");
 		return false;
 
 	}
 
 	/**Writes to a separate text file to log all transactions of the session
 	 * @param transaction The string that gets written to transactionLog.txt
+	 * @author David Morales
 	 */
 	public static void transactionLogger(String transaction) throws IOException {
 		try { 
@@ -813,14 +833,5 @@ public class UserUtilities implements Printable {
 		catch(IOException ioEx) { 
 			throw new IOException("IOException");
 		}
-	}
-	
-	public void print(Customer bankUser){
-	}
-
-	public void printTransactionLog(Customer bankUser) {
-	}
-
-	public void printBankStatement(Customer bankUser) { 
 	}
 }

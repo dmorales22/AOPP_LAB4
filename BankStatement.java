@@ -14,6 +14,7 @@ alone.
 
 import java.io.*;
 import java.util.*;
+
 /**This class contains information for bank statements for users.
  * @author David Morales
  */
@@ -21,9 +22,18 @@ public class BankStatement implements Printable {
 	private Customer bankUser;
 	private String date; 
 
+	/**Default constructor 
+	 *@author David Morales
+	 *
+	*/
 	public BankStatement() { 
 	}
 
+	/**Constructor
+	 * @param bU The bank user object.
+	 * @param d String that has the date. 
+	 * @author David Morales
+	*/
 	public BankStatement(Customer bU, String d) { 
 		this.bankUser = bU;
 		this.date = d;
@@ -49,6 +59,7 @@ public class BankStatement implements Printable {
 
 	/**This method is to create bank statements for the user containing all personal and account
 	* information, including transaction history from all accounts. 
+	* @author David Morales
 	*/
 	public void createBankStatement() throws IOException {
 		try { 
@@ -64,13 +75,14 @@ public class BankStatement implements Printable {
 			PrintWriter textWriter = new PrintWriter(bw);
 			
 			//Writes the text file with strings
-			textWriter.println("David's Bank Bank Statement            Date:" + date);
+			textWriter.println("David Axel Bank Statement            Date:" + date);
 			textWriter.println("-----------------------------------------------------------");
 			textWriter.println("Name: " + bankUser.getFirstName() + " " + bankUser.getLastName());
 			textWriter.println("Date of Birth: " + bankUser.getDob()); 
 			textWriter.println("Identification Number: " + bankUser.getIdNum());
 			textWriter.println("Address: " + bankUser.getAddress());
 			textWriter.println("Phone Number: " + bankUser.getPhoneNum());
+			textWriter.println("");
 			textWriter.println("Checking Account Number: " + bankUser.getChecking().getAccountNum());
 			textWriter.println("Savings Account Number: " + bankUser.getSavings().getAccountNum());
 			textWriter.println("Credit Account Number: " + bankUser.getCredit().getAccountNum());
@@ -116,12 +128,99 @@ public class BankStatement implements Printable {
 		}
 	}
 
-	public void print(Customer bankUser){
+	/** This print method prints all the individual user information 
+	 * @author Axel Diaz 
+	*/
+	public void print(){
+		System.out.println("BANK USER INFORMATION");
+		System.out.println("First Name: " + bankUser.getFirstName());
+		System.out.println("Last Name: " + bankUser.getLastName());
+		System.out.println("Date of Birth: " + bankUser.getDob());
+		System.out.println("Address: " + bankUser.getAddress());
+		System.out.println("Phone Number: " + bankUser.getPhoneNum());
+		System.out.println("Email:" + bankUser.getEmail());
+		System.out.println("Password: " + bankUser.getPassword());
+		System.out.println("Identification Number: " + bankUser.getIdNum());
+		System.out.println(bankUser.getChecking().toString());
+		System.out.println(bankUser.getSavings().toString());
+		System.out.println(bankUser.getCredit().toString());
 	}
 
-	public void printTransactionLog(Customer bankUser) {
+	/** This print method prints all the individual user transactions. 
+	 * @author Axel Diaz 
+	*/
+	public void printTransactionLog() {
+		Checking userChecking = bankUser.getChecking();
+		Savings userSavings = bankUser.getSavings();
+		Credit userCredit = bankUser.getCredit();
+
+		System.out.println("BANK USER TRANSACTIONS");
+		System.out.println("Checking Account History:");
+		for(int i = 0; i < userChecking.getTransactionLog().size(); i++) { //Prints out checking account transactions
+			System.out.println(userChecking.getTransactionLog().get(i));
+		}
+
+		System.out.println("Savings Account History:");
+
+		for(int i = 0; i < userSavings.getTransactionLog().size(); i++) { //Prints out savings account transactions
+			System.out.println(userSavings.getTransactionLog().get(i));
+		}
+
+		System.out.println("Credit Account History:"); 
+
+		for(int i = 0; i < userCredit.getTransactionLog().size(); i++) { //Prints out credit account transactions
+			System.out.println(userCredit.getTransactionLog().get(i));
+		}
+		System.out.println("");
 	}
 
-	public void printBankStatement(Customer bankUser) { 
+	/** This print method prints the individual user bank statement. 
+	 * @author Axel Diaz 
+	*/
+	public void printBankStatement() { 
+		System.out.println("David Axel Bank Statement            Date:" + date);
+		System.out.println("-----------------------------------------------------------");
+		System.out.println("Name: " + bankUser.getFirstName() + " " + bankUser.getLastName());
+		System.out.println("Date of Birth: " + bankUser.getDob()); 
+		System.out.println("Identification Number: " + bankUser.getIdNum());
+		System.out.println("Address: " + bankUser.getAddress());
+		System.out.println("Phone Number: " + bankUser.getPhoneNum());
+		System.out.println("Checking Account Number: " + bankUser.getChecking().getAccountNum());
+		System.out.println("Savings Account Number: " + bankUser.getSavings().getAccountNum());
+		System.out.println("Credit Account Number: " + bankUser.getCredit().getAccountNum());
+		System.out.println("");
+		System.out.println("Checking Starting Balance: $" + bankUser.getChecking().getStartingBalance());
+		System.out.println("Savings Starting Balance: $" + bankUser.getSavings().getStartingBalance());
+		System.out.println("Credit Starting Balance: $" + bankUser.getCredit().getStartingBalance());
+		System.out.println("");
+		System.out.println("Checking Current Balance: $" + bankUser.getChecking().getCurrentBalance());
+		System.out.println("Savings Current Balance: $" + bankUser.getSavings().getCurrentBalance());
+		System.out.println("Credit Current Balance: $" + bankUser.getCredit().getCurrentBalance());
+		System.out.println("");
+		System.out.println("Transaction History:");
+		System.out.println("-----------------------------------------------------------");
+		System.out.println("Checking Account History:");
+			
+		Checking userChecking = bankUser.getChecking();
+		Savings userSavings = bankUser.getSavings();
+		Credit userCredit = bankUser.getCredit();
+
+		for(int i = 0; i < userChecking.getTransactionLog().size(); i++) { //Prints out checking account transactions
+			System.out.println(bankUser.getChecking().getTransactionLog().get(i));
+		}
+
+		System.out.println("Savings Account History:");
+
+		for(int i = 0; i < userSavings.getTransactionLog().size(); i++) { //Prints out savings account transactions
+			System.out.println(bankUser.getSavings().getTransactionLog().get(i));
+		}
+
+		System.out.println("Credit Account History:"); 
+
+		for(int i = 0; i < userCredit.getTransactionLog().size(); i++) { //Prints out credit account transactions
+			System.out.println(bankUser.getCredit().getTransactionLog().get(i));
+		}
+
+		System.out.println("");
 	}
 }
