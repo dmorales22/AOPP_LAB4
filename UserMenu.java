@@ -36,11 +36,10 @@ public class UserMenu {
 			System.out.println("[4] Exit program");
 
 			Customer bankUser; 
-			double accountInput;
 			int userInputInt = UserUtilities.userInputInteger(4); //Input validation
 
 			if(userInputInt == -1 || userInputInt == -2) {
-				System.out.println("Invalid input. Try again.");
+				System.out.println("Invalid input. Try again. \n");
 				bankManagerOptions();
 				return;
 			}
@@ -51,7 +50,7 @@ public class UserMenu {
 					bankUser = UserUtilities.accountNameSearch();
 
 					if(bankUser == null) {
-						System.out.println("Sorry. User not found.");
+						System.out.println("Sorry. User not found. \n");
 						bankManagerOptions();
 						return;
 					}
@@ -70,8 +69,9 @@ public class UserMenu {
 					userInputInt = UserUtilities.userInputInteger(2);
 
 					if(userInputInt == -1 || userInputInt == -2) {
-						System.out.println("Invalid input. Try again.");
+						System.out.println("Invalid input. Try again. \n");
 						userInputInt = 1;
+						bankManagerOptions();
 						break;
 					}
 
@@ -81,7 +81,7 @@ public class UserMenu {
 							bankUser = UserUtilities.accountNumSearch(userInputInt);
 
 							if(bankUser == null) {
-								System.out.println("Sorry. User not found.");
+								System.out.println("Sorry. User not found. \n");
 								bankManagerOptions();
 								return;
 							}
@@ -96,7 +96,8 @@ public class UserMenu {
 							bankUser = UserUtilities.accountNumSearch(userInputInt);
 
 							if(bankUser == null) {
-								System.out.println("Sorry. User not found.");
+								System.out.println("Sorry. User not found. \n");
+								bankManagerOptions();
 								return;
 							}
 
@@ -110,7 +111,7 @@ public class UserMenu {
 							bankUser = UserUtilities.accountNumSearch(userInputInt);
 
 							if(bankUser == null) {
-								System.out.println("Sorry. User not found. /n");
+								System.out.println("Sorry. User not found. \n");
 								bankManagerOptions();
 								return;
 							}
@@ -137,6 +138,7 @@ public class UserMenu {
 
 				case 4: //Exits program
 					System.out.println("Goodbye, bank manager.");
+					UserUtilities.updateDatabase(RunBank.bankUserList);
 					System.exit(0);
 			}
 		}
@@ -206,7 +208,7 @@ public class UserMenu {
 					bankUser = UserUtilities.accountNameSearch();
 
 					if(bankUser == null) {
-						System.out.println("Invalid input. Try again.");
+						System.out.println("Invalid input. Try again. \n");
 						userMenu();
 						return;
 					}
@@ -228,7 +230,7 @@ public class UserMenu {
 					userInputInt = UserUtilities.userInputInteger(2);
 
 					if(userInputInt == -1 || userInputInt == -2) {
-						System.out.println("Invalid input. Try again.");
+						System.out.println("Invalid input. Try again. \n");
 						userMenu();
 						return;
 					}
@@ -237,7 +239,7 @@ public class UserMenu {
 					bankUser = UserUtilities.accountNumSearch(userInputInt);
 
 					if(bankUser == null) { //If bank user is not found 
-						System.out.println("Bank user not found or invalid input. Try again.");
+						System.out.println("Bank user not found or invalid input. Try again. \n");
 						userMenu();
 						return;
 					}
@@ -285,10 +287,6 @@ public class UserMenu {
 			String email;
 			String password;
 			ArrayList<String> transactionLogSavings = new ArrayList<String>();
-			int idNum;
-			int savingsAccountNum;
-			int checkingAccountNum;
-			int creditAccountNum;
 			int userInputInt; 
 			int index = RunBank.bankUserList.size();
 
@@ -403,7 +401,7 @@ public class UserMenu {
 			switch(userInputInt) { //Switch statement for user options
 				case 0: //Selecting checking account 
 					if(bankUser.getChecking().getAccountNum() == 0) {
-						System.out.println("Account does not exist.");
+						System.out.println("Account does not exist. \n");
 						accountMenu(bankUser);
 						return;
 					}
@@ -413,7 +411,7 @@ public class UserMenu {
 
 				case 1: //Selecting savings account
 					if(bankUser.getSavings().getAccountNum() == 0) {
-						System.out.println("Account does not exist.");
+						System.out.println("Account does not exist. \n");
 						accountMenu(bankUser);
 						return;
 					}
@@ -423,7 +421,7 @@ public class UserMenu {
 
 				case 2: //Selecting credit account
 					if(bankUser.getCredit().getAccountNum() == 0) {
-						System.out.println("Account does not exist.");
+						System.out.println("Account does not exist. \n");
 						accountMenu(bankUser);
 						return;
 					}
@@ -508,9 +506,6 @@ public class UserMenu {
 	*/
 	public static void transactionMenu(Customer bankUser, int accountType) throws IOException {
 		try {
-			Checking checkingAccount = bankUser.getChecking();
-			Savings savingsAccount = bankUser.getSavings();
-			Credit creditAccount = bankUser.getCredit();
 
 			System.out.println("");
 			System.out.println("Select the options below: ");
@@ -610,9 +605,6 @@ public class UserMenu {
 	*/
 	public static void transferMoneyMenu(Customer bankUser, int accountType) throws IOException {
 		try {
-			Checking tempChecking;
-			Savings tempSavings;
-			Credit tempCredit;
 			System.out.println("Where do want to send money to?");
 			System.out.println("[0] Your checking account");
 			System.out.println("[1] Your savings account");
@@ -646,13 +638,13 @@ public class UserMenu {
 				case 0: //Transfer money to checking
 					switch(accountType) {
 						case 0: //From checking account to checking
-							System.out.println("Same account! Try again.");
+							System.out.println("Same account! Try again. \n");
 							transferMoneyMenu(bankUser, accountType);
 							return;
 
 						case 1: //From savings account to checking
 							if(bankUser.getChecking().getAccountNum() == 0) {
-								System.out.println("Account does not exist.");
+								System.out.println("Account does not exist. \n");
 								transferMoneyMenu(bankUser, accountType);
 								return;
 							}
@@ -669,7 +661,7 @@ public class UserMenu {
 
 						case 2: //From credit account to checking
 							if(bankUser.getChecking().getAccountNum() == 0 || bankUser.getCredit().getAccountNum() == 0) {
-								System.out.println("Account does not exist.");
+								System.out.println("Account does not exist. \n");
 								transferMoneyMenu(bankUser, accountType);
 								return;
 							}
@@ -691,7 +683,7 @@ public class UserMenu {
 						case 0: //From checking account to savings
 
 							if(bankUser.getChecking().getAccountNum() == 0) {
-								System.out.println("Account does not exist.");
+								System.out.println("Account does not exist. \n");
 								transferMoneyMenu(bankUser, accountType);
 								return;
 							}
@@ -707,14 +699,14 @@ public class UserMenu {
 							break;
 
 						case 1: //From savings account to savings
-							System.out.println("Same account! Try again.");
+							System.out.println("Same account! Try again. \n");
 							transferMoneyMenu(bankUser, accountType);
 							return;
 
 						case 2: //From credit account to savings
 
 							if(bankUser.getCredit().getAccountNum() == 0) {
-								System.out.println("Account does not exist.");
+								System.out.println("Account does not exist. \n");
 								transferMoneyMenu(bankUser, accountType);
 								return;
 							}
@@ -735,7 +727,7 @@ public class UserMenu {
 					switch(accountType) {
 						case 0: //From checking account to credit
 							if(bankUser.getChecking().getAccountNum() == 0 || bankUser.getCredit().getAccountNum() == 0) {
-								System.out.println("Account does not exist.");
+								System.out.println("Account does not exist. \n");
 								transferMoneyMenu(bankUser, accountType);
 								return;
 							}
@@ -753,7 +745,7 @@ public class UserMenu {
 						case 1: //From savings account to credit
 
 							if(bankUser.getCredit().getAccountNum() == 0) {
-								System.out.println("Account does not exist.");
+								System.out.println("Account does not exist. \n");
 								transferMoneyMenu(bankUser, accountType);
 								return;
 							}
@@ -769,7 +761,7 @@ public class UserMenu {
 							break;
 
 						case 2: //From credit account to credit
-							System.out.println("Same account! Try again.");
+							System.out.println("Same account! Try again. \n");
 							transferMoneyMenu(bankUser, accountType);
 							return;
 					}
@@ -818,9 +810,9 @@ public class UserMenu {
 			}
 
 			Customer otherUser = RunBank.bankUserList.get(userInputInt);
-			
+
 			if(bankUser.getIdNum() == otherUser.getIdNum()) { //Prevent user to sending money to themself
-				System.out.println("Same user. Try again.");
+				System.out.println("Same user. Try again. \n");
 				sendMoneyToAnotherAccount(bankUser, accountType, moneyVal);
 				return;
 			}
@@ -841,7 +833,7 @@ public class UserMenu {
 			switch(accountType) { //Sends money to other user account type
 				case 0: //Sending to other user's checking
 					if(otherUser.getChecking().getAccountNum() == 0) { //Checks if account exists
-						System.out.println("Account doesn't exist.");
+						System.out.println("Account doesn't exist. \n");
 						sendMoneyToAnotherAccount(bankUser, accountType, moneyVal);
 						return;
 					}
@@ -851,7 +843,7 @@ public class UserMenu {
 
 				case 1: //Sending to other user's savings
 					if(otherUser.getSavings().getAccountNum() == 0) {
-						System.out.println("Account doesn't exist.");
+						System.out.println("Account doesn't exist. \n");
 						sendMoneyToAnotherAccount(bankUser, accountType, moneyVal);
 						return;
 					}
@@ -861,7 +853,7 @@ public class UserMenu {
 
 				case 2: //Sending to other user's credit 
 					if(otherUser.getCredit().getAccountNum() == 0) {
-						System.out.println("Account doesn't exist.");
+						System.out.println("Account doesn't exist. \n");
 						sendMoneyToAnotherAccount(bankUser, accountType, moneyVal);
 						return;
 					}

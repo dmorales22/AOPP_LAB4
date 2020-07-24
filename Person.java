@@ -12,9 +12,6 @@ but not limited to the source code, lab report and output files were written and
 alone.
 */
 
-import java.io.*;
-import java.util.*;
-
 /**This abstract class file contains all personal account information
  * @author Axel Diaz
  */

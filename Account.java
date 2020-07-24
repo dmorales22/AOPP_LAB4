@@ -12,11 +12,10 @@ but not limited to the source code, lab report and output files were written and
 alone.
 */
 
-import java.io.*;
 import java.util.*;
 
 /**This abstract class contains attributes for bank accounts
- * @author David Morales
+ * @author Axel Diaz
  */
 public abstract class Account {
 	protected int accountNum;
@@ -33,6 +32,8 @@ public abstract class Account {
 	/**
 	 * @param aC Account number for specific account 
 	 * @param aB Account balance for specific account
+	 * @param tL Transaction log
+	 * @author Axel Diaz
 	 */
 	public Account(int aC, double sB, double cB, ArrayList<String> tL) {
 		this.accountNum = aC;
@@ -78,6 +79,7 @@ public abstract class Account {
 	/**
 	 * Prints out all account info of the bank user
 	 * @return String with account info.
+	 * @author David Morales
 	 */
 	public String toString() {
 		return "Account#" + accountNum + " " + "Your balance is: $" + currentBalance + ". \n";

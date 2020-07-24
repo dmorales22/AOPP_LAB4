@@ -14,7 +14,6 @@ alone.
 
 import java.io.*;
 import java.util.*;
-import java.text.SimpleDateFormat;
 
 /**This class has the methods to perform all the user banking functions.
 * @author Axel Diaz
@@ -33,12 +32,11 @@ public class UserTransactions {
 	 */
 	public static void payAccount(Customer myAccount, Customer otherAccount, double amountToBePaid, int otherAccountType, int myAccountType) throws IOException {
 		try {
-			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy-HH:mm:ss"); //Format date
 			Date date = new Date(); //Get date
 			String transactionStr = "";
 
 			if(amountToBePaid < 0) { //Checks balance of checking an savings accounts
-				System.out.println("No negative amounts");
+				System.out.println("No negative amounts. \n");
 				return;
 			}
 
@@ -49,7 +47,7 @@ public class UserTransactions {
 			switch(myAccountType) { //switch statement to send the other bank user money  
 				case 0: //Sending from checking account
 					if(amountToBePaid > myAccount.getChecking().getCurrentBalance()) {
-						System.out.println("Transfer failed. Insufficient amount.");
+						System.out.println("Transfer failed. Insufficient amount. \n");
 						return;
 					}
 
@@ -82,12 +80,12 @@ public class UserTransactions {
 							myAccount.getChecking().getTransactionLog().add(transactionStr);
 							break;
 					}
-					System.out.println("Transfer success! From " + myAccount.getFirstName() + " " + myAccount.getLastName() + ". Your balance is: $" + myAccount.getChecking().getCurrentBalance());
+					System.out.println("Transfer success! From " + myAccount.getFirstName() + " " + myAccount.getLastName() + ". Your balance is: $" + myAccount.getChecking().getCurrentBalance() + "\n");
 					break;
 
 				case 1: //Sending from savings account
 					if(amountToBePaid > myAccount.getSavings().getCurrentBalance()) {
-						System.out.println("Transfer failed. Insufficient amount.");
+						System.out.println("Transfer failed. Insufficient amount. \n");
 						return;
 					}
 
@@ -125,7 +123,7 @@ public class UserTransactions {
 
 				case 2: //From credit accounts
 					if(myAccount.getCredit().getCreditMax() < -(myAccount.getCredit().getCurrentBalance() - amountToBePaid)) { //Checks if account is not at max credit
-						System.out.println("Insufficient credit.");
+						System.out.println("Insufficient credit. \n");
 						return;
 					}
 
@@ -176,19 +174,18 @@ public class UserTransactions {
 	 */
 	public static void depositAccount(double depositAmount, int accountType, Customer myAccount) throws IOException { 
 		try {
-			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy-HH:mm:ss");
 			Date date = new Date();
 			String transactionStr = "";
 
 			if (depositAmount < 0) { //Checks if amount inputted is negative 
-				System.out.println("No negative amounts. Please try again");
+				System.out.println("No negative amounts. Please try again. \n");
 				return;
 			}
 
 			switch(accountType) { //Switch statement to deposit money in different account types 
 				case 0: //Deposits money into checking accounts
 					myAccount.getChecking().setCurrentBalance(myAccount.getChecking().getCurrentBalance() + depositAmount);
-					System.out.println("Deposit success! New " + myAccount.getFirstName() + " " + myAccount.getLastName() + " " + "checking balance is: $" + myAccount.getChecking().getCurrentBalance());
+					System.out.println("Deposit success! New " + myAccount.getFirstName() + " " + myAccount.getLastName() + " " + "checking balance is: $" + myAccount.getChecking().getCurrentBalance() + "\n");
 					transactionStr = date + ",,,deposits," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Checking," + depositAmount;
 
 					UserUtilities.transactionLogger(transactionStr);
@@ -197,7 +194,7 @@ public class UserTransactions {
 
 				case 1: //Deposits money into savings accounts
 					myAccount.getSavings().setCurrentBalance(myAccount.getSavings().getCurrentBalance() + depositAmount);
-					System.out.println("Deposit success! New " + myAccount.getFirstName() + " " + myAccount.getLastName() + " " + "savings balance is: $" + myAccount.getSavings().getCurrentBalance());
+					System.out.println("Deposit success! New " + myAccount.getFirstName() + " " + myAccount.getLastName() + " " + "savings balance is: $" + myAccount.getSavings().getCurrentBalance() + "\n");
 					transactionStr = date + ",,,deposits," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Savings," + depositAmount;
 
 					UserUtilities.transactionLogger(transactionStr);
@@ -206,7 +203,7 @@ public class UserTransactions {
 
 				case 2: //Deposits money into credit accounts
 					myAccount.getCredit().setCurrentBalance(myAccount.getCredit().getCurrentBalance() + depositAmount);
-					System.out.println("Deposit success! New " + myAccount.getFirstName() + " " + myAccount.getLastName() + " " + "credit balance is: $" + myAccount.getCredit().getCurrentBalance());
+					System.out.println("Deposit success! New " + myAccount.getFirstName() + " " + myAccount.getLastName() + " " + "credit balance is: $" + myAccount.getCredit().getCurrentBalance() + "\n");
 					transactionStr = date + ",,,deposits," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Credit," + depositAmount;
 
 					UserUtilities.transactionLogger(transactionStr);
@@ -227,27 +224,26 @@ public class UserTransactions {
 	*/
 	public static void inquiryAccount(Customer myAccount, int accountType) throws IOException {
 		try {
-			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy-HH:mm:ss");
 			Date date = new Date();
 			String transactionStr;
 
 			switch(accountType) {
 				case 0:
-					System.out.println("Inquiry success! " + myAccount.getFirstName() + " " + myAccount.getLastName() + " Checking account balance: $" + myAccount.getChecking().getCurrentBalance());
+					System.out.println("Inquiry success! " + myAccount.getFirstName() + " " + myAccount.getLastName() + " Checking account balance: $" + myAccount.getChecking().getCurrentBalance() + "\n");
 					transactionStr = date + "," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Checking,inquires,,,,";
 					UserUtilities.transactionLogger(transactionStr);
 					myAccount.getChecking().getTransactionLog().add(transactionStr);
 					break;
 
 				case 1:
-					System.out.println("Inquiry success! " + myAccount.getFirstName() + " " + myAccount.getLastName() + " Savings account balance: $" + myAccount.getSavings().getCurrentBalance());
+					System.out.println("Inquiry success! " + myAccount.getFirstName() + " " + myAccount.getLastName() + " Savings account balance: $" + myAccount.getSavings().getCurrentBalance() + "\n");
 					transactionStr = date + "," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Savings,inquires,,,,";
 					UserUtilities.transactionLogger(transactionStr);
 					myAccount.getSavings().getTransactionLog().add(transactionStr);
 					break;
 
 				case 2:
-					System.out.println("Inquiry success! " + myAccount.getFirstName() + " " + myAccount.getLastName() + " Credit account balance: $" + myAccount.getCredit().getCurrentBalance());
+					System.out.println("Inquiry success! " + myAccount.getFirstName() + " " + myAccount.getLastName() + " Credit account balance: $" + myAccount.getCredit().getCurrentBalance() + "\n");
 					transactionStr = date + "," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Credit,inquires,,,,";
 					UserUtilities.transactionLogger(transactionStr);
 					myAccount.getChecking().getTransactionLog().add(transactionStr);
@@ -268,19 +264,18 @@ public class UserTransactions {
 	 */
 	public static void withdrawAccount(double amountWithdraw, int accountType, Customer myAccount) throws IOException {
 		try {
-			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy-HH:mm:ss");
 			Date date = new Date();
 			String transactionStr = "";
 
 			switch(accountType) { //Switch statement for withdraw for different types of accounts
 				case 0: //Withdraws from checking accounts
 					if(myAccount.getChecking().getCurrentBalance() < amountWithdraw || amountWithdraw < 0) {
-						System.out.println("Cannot complete transaction. Insufficient balance.");
+						System.out.println("Cannot complete transaction. Insufficient balance. \n");
 						return;
 					}
 
 					myAccount.getChecking().setCurrentBalance(myAccount.getChecking().getCurrentBalance() - amountWithdraw); //Withdraws balance
-					System.out.println("Withdraw success! New " + myAccount.getFirstName() + " " + myAccount.getLastName() + " " + "checking balance is: $" + myAccount.getChecking().getCurrentBalance());
+					System.out.println("Withdraw success! New " + myAccount.getFirstName() + " " + myAccount.getLastName() + " " + "checking balance is: $" + myAccount.getChecking().getCurrentBalance() + "\n");
 					transactionStr = date + "," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Checking,withdraws,,," + amountWithdraw;
 
 					UserUtilities.transactionLogger(transactionStr);
@@ -289,12 +284,12 @@ public class UserTransactions {
 
 				case 1: //Withdraws from savings accounts
 					if(myAccount.getSavings().getCurrentBalance() < amountWithdraw || amountWithdraw < 0) {
-						System.out.println("Cannot complete transaction. Insufficient balance.");
+						System.out.println("Cannot complete transaction. Insufficient balance. \n");
 						return;
 					}
 
 					myAccount.getSavings().setCurrentBalance(myAccount.getSavings().getCurrentBalance() - amountWithdraw);//Withdraws balance
-					System.out.println("Withdraw success! New " + myAccount.getFirstName() + " " + myAccount.getLastName() + " " + "savings balance is: $" + myAccount.getSavings().getCurrentBalance());
+					System.out.println("Withdraw success! New " + myAccount.getFirstName() + " " + myAccount.getLastName() + " " + "savings balance is: $" + myAccount.getSavings().getCurrentBalance() + "\n");
 					transactionStr = date + "," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Savings,withdraws,,," + amountWithdraw;
 
 					UserUtilities.transactionLogger(transactionStr);
@@ -303,12 +298,12 @@ public class UserTransactions {
 
 				case 2: //Withdraws from credit accounts
 					if(amountWithdraw < 0 || (myAccount.getCredit().getCreditMax() < -(myAccount.getCredit().getCurrentBalance() - amountWithdraw))) {
-						System.out.println("Cannot complete transaction. Insufficient credit.");
+						System.out.println("Cannot complete transaction. Insufficient credit. \n");
 						return;
 					}
 
 					myAccount.getCredit().setCurrentBalance(myAccount.getCredit().getCurrentBalance() - amountWithdraw);//Withdraws balance
-					System.out.println("Withdraw success! New " + myAccount.getFirstName() + " " + myAccount.getLastName() + " " + "credit balance is: $" + myAccount.getCredit().getCurrentBalance());
+					System.out.println("Withdraw success! New " + myAccount.getFirstName() + " " + myAccount.getLastName() + " " + "credit balance is: $" + myAccount.getCredit().getCurrentBalance() + "\n");
 					transactionStr = date + "," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Credit,withdraws,,," + amountWithdraw;
 
 					UserUtilities.transactionLogger(transactionStr);

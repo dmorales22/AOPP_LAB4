@@ -12,9 +12,7 @@ but not limited to the source code, lab report and output files were written and
 alone.
 */
 
-import java.io.*;
 import java.util.*;
-import java.text.SimpleDateFormat;
 
 /**This class contains all personal and account information. 
  * @author Axel Diaz
@@ -132,7 +130,6 @@ public class Customer extends Person implements Printable {
 	 * @author Axel Diaz 
 	*/
     public void printBankStatement() { 
-		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy-HH:mm:ss");
 		Date date = new Date();
 
 		System.out.println("David Axel Bank Statement            Date:" + date);

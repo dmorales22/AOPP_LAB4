@@ -12,11 +12,9 @@ but not limited to the source code, lab report and output files were written and
 alone.
 */
 
-import java.io.*;
 import java.util.*;
-import java.text.SimpleDateFormat;
 
-/**This class file contains checking account information
+/**This class file contains checking acimport java.io.*;count information
  * @author Axel Diaz
  */
 public class Checking extends Account{

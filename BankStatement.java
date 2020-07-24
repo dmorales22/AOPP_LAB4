@@ -13,7 +13,6 @@ alone.
 */
 
 import java.io.*;
-import java.util.*;
 
 /**This class contains information for bank statements for users.
  * @author David Morales

@@ -11,7 +11,7 @@ I declare that I did not receive unauthorized assistance. Moreover, all delivera
 but not limited to the source code, lab report and output files were written and produced by me
 alone.
 */
-import java.io.*;
+
 import java.util.*;
 
 /**This class file contains checking account information

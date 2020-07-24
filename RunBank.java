@@ -28,11 +28,11 @@ public class RunBank {
 	public static int maxSavingsNum;
 	public static int maxCreditNum;
 
-	public static void main(String[] args) throws FileNotFoundException, IOException, ArrayIndexOutOfBoundsException{
-		/** Main starts the necessary beginning functions for the user menus. Filename is inputed from args in command line
-		 * @param args The argument passed through the command line. 
-		 * @author David Morales
-		 */
+	/** Main starts the necessary beginning functions for the user menus. Filename is inputed from args in command line
+	 * @param args The argument passed through the command line. 
+	 * @author David Morales
+	 */
+	public static void main(String[] args) throws FileNotFoundException, IOException, ArrayIndexOutOfBoundsException {
 		try {
 			filename = args[0];
 			bankUserList = UserUtilities.fileReader(); //Gets bank users from text file

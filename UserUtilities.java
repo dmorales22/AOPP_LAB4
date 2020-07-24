@@ -57,7 +57,6 @@ public class UserUtilities {
 	* @author David Morales
 	*/
 	public static Customer accountNameSearchForReader(String firstName, String lastName) {
-		Scanner userIn = new Scanner(System.in);
 		Customer bankUser;
 		String bankUserName = firstName + " " + lastName;
 		String iter;
@@ -100,7 +99,7 @@ public class UserUtilities {
 		}
 
 		if(sameNameUserList.size() == 0) { //If not user is found
-			System.out.println("No user found. Try again.");
+			System.out.println("No user found. Try again. \n");
 			return null;
 		}
 
@@ -116,7 +115,7 @@ public class UserUtilities {
 			accountNameSearch();
 			return null;
 		}
-
+		
 		bankUser = sameNameUserList.get(userInputInt); //Returns bank user
 		return bankUser;
 	}
@@ -141,8 +140,8 @@ public class UserUtilities {
 		int userInputInt = Integer.parseInt(userInput);
 
 		if(userInputInt > rangeLimit || userInputInt < 0) { //Range check
-				System.out.println("Invalid input. Please try again.");
-				return -1;
+			System.out.println("Invalid input. Please try again. \n");
+			return -1;
 		}
 
 		return userInputInt;
@@ -157,13 +156,13 @@ public class UserUtilities {
 		String userInput = userIn.next();
 
 		if(!isInputValidDouble(userInput)) { //Input validation
-			System.out.println("Not a valid value. Try again.");
+			System.out.println("Not a valid value. Try again. \n");
 			return -1.0;
 		}
 		double userInputDouble = Double.parseDouble(userInput);
 		
 		if(userInputDouble < 0) {
-			System.out.println("No negative amounts please. Try again.");
+			System.out.println("No negative amounts please. Try again. \n");
 			return -1.0;
 		}
 		return userInputDouble;
@@ -264,6 +263,7 @@ public class UserUtilities {
 				RunBank.maxCreditNum =  findMaxValue(RunBank.maxCreditNum, creditAccountNum);
 				index++;
 			}
+			textReader.close();
 
 			//Adding account number hashmaps to an ArrayList
 			tempHash.add(checkingAccountHmap);
@@ -318,11 +318,8 @@ public class UserUtilities {
 			int stringSize = tokenizedLine.length;
 			tokenIndex = dynamicParser(tokenizedLine);
 			String action; 
-			String toFullname;
-			String fromFullname;
 			String accountType;
 			String otherAccountType;
-			double amountOfMoney;
 			Customer toBankUser;
 			Customer fromBankUser;
 			int index = 1; 
@@ -338,7 +335,7 @@ public class UserUtilities {
 						toBankUser = accountNameSearchForReader(tokenizedLine[tokenIndex.get("From First Name")], tokenizedLine[tokenIndex.get("From Last Name")]);
 
 						if (toBankUser == null) {
-							System.out.println("Transaction failed. User does not exist.");
+							System.out.println("Transaction failed. User does not exist. \n");
 							break;
 						}
 
@@ -359,7 +356,7 @@ public class UserUtilities {
 					case "deposits": //All cases statements for deposits scenarios
 						toBankUser = accountNameSearchForReader(tokenizedLine[tokenIndex.get("To First Name")], tokenizedLine[tokenIndex.get("To Last Name")]);
 						if(toBankUser == null) {
-							System.out.println("Transaction failed. User does not exist.");
+							System.out.println("Transaction failed. User does not exist. \n");
 							break;
 						}
 						accountType = tokenizedLine[tokenIndex.get("To Where")];
@@ -380,7 +377,7 @@ public class UserUtilities {
 						fromBankUser = accountNameSearchForReader(tokenizedLine[tokenIndex.get("From First Name")], tokenizedLine[tokenIndex.get("From Last Name")]);
 
 						if(fromBankUser == null) {
-							System.out.println("Transaction failed. User does not exist.");
+							System.out.println("Transaction failed. User does not exist. \n");
 							break;
 						}
 
@@ -401,7 +398,7 @@ public class UserUtilities {
 					case "transfers": //All case statements for transfers scenarios
 						fromBankUser = accountNameSearchForReader(tokenizedLine[tokenIndex.get("From First Name")], tokenizedLine[tokenIndex.get("From Last Name")]);
 						if(fromBankUser == null) {
-							System.out.println("Transaction failed. User does not exist.");
+							System.out.println("Transaction failed. User does not exist. \n");
 							break;
 						}
 						accountType = tokenizedLine[tokenIndex.get("From Where")];
@@ -409,6 +406,10 @@ public class UserUtilities {
 						switch(accountType) {
 							case "Checking":
 								UserTransactions.withdrawAccount(Double.parseDouble(tokenizedLine[tokenIndex.get("Action Amount")]), 0, fromBankUser);
+								if(fromBankUser.getChecking().getCurrentBalance() < Double.parseDouble(tokenizedLine[tokenIndex.get("Action Amount")])) {
+									break;
+								}
+							
 								switch(otherAccountType) {
 									case "Checking":
 										UserTransactions.depositAccount(Double.parseDouble(tokenizedLine[tokenIndex.get("Action Amount")]), 0, fromBankUser);
@@ -424,6 +425,10 @@ public class UserUtilities {
 
 							case "Savings":
 								UserTransactions.withdrawAccount(Double.parseDouble(tokenizedLine[tokenIndex.get("Action Amount")]), 1, fromBankUser);
+								if(fromBankUser.getSavings().getCurrentBalance() < Double.parseDouble(tokenizedLine[tokenIndex.get("Action Amount")])) {
+									break;
+								}
+
 								switch(otherAccountType) {
 									case "Checking":
 										UserTransactions.depositAccount(Double.parseDouble(tokenizedLine[tokenIndex.get("Action Amount")]), 0, fromBankUser);
@@ -439,6 +444,10 @@ public class UserUtilities {
 
 							case "Credit":
 								UserTransactions.withdrawAccount(Double.parseDouble(tokenizedLine[tokenIndex.get("Action Amount")]), 2, fromBankUser);
+								if(fromBankUser.getCredit().getCreditMax() < -(fromBankUser.getCredit().getCurrentBalance() - Double.parseDouble(tokenizedLine[tokenIndex.get("Action Amount")]))) {
+									break;
+								}
+
 								switch(otherAccountType) {
 									case "Checking":
 										UserTransactions.depositAccount(Double.parseDouble(tokenizedLine[tokenIndex.get("Action Amount")]), 0, fromBankUser);
@@ -459,7 +468,7 @@ public class UserUtilities {
 						toBankUser = accountNameSearchForReader(tokenizedLine[tokenIndex.get("To First Name")], tokenizedLine[tokenIndex.get("To Last Name")]);
 
 						if(toBankUser == null || fromBankUser == null) {
-							System.out.println("Transaction failed. User does not exist.");
+							System.out.println("Transaction failed. User does not exist. \n");
 							break;
 						}
 
@@ -512,7 +521,9 @@ public class UserUtilities {
 				}
 				index++;
 			}
-			System.out.println("Transactions completed \n");
+			
+			textReader.close();
+			System.out.println("Transactions completed. \n");
 		}
 
 		catch(FileNotFoundException fnFE) {
