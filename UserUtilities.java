@@ -828,13 +828,13 @@ public class UserUtilities {
 	 */
 	public static void transactionLogger(String transaction) throws IOException {
 		try { 
-			File loggerTxt = new File("transactionLog.csv");
+			File loggerTxt = new File("transactionsLog.csv");
 			
 			if(!loggerTxt.exists()) { //If text file doesn't exit, then it creates one
 				loggerTxt.createNewFile();
 			}
 
-			FileWriter fw = new FileWriter("transactionLog.csv", true);
+			FileWriter fw = new FileWriter("transactionsLog.csv", true);
 			BufferedWriter bw = new BufferedWriter(fw);
 			PrintWriter textWriter = new PrintWriter(bw);
 			textWriter.println(transaction); //Writes any string pass into this function to transactionLog.txt

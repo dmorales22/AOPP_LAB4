@@ -1,10 +1,11 @@
-David's Bank Bank Statement            Date:21/07/2020-18:10:18
+David Axel Bank Statement            Date:25/07/2020-17:27:54
 -----------------------------------------------------------
 Name: David Morales
 Date of Birth: "September 20, 1972"
 Identification Number: 91
 Address: "531 W. University Ave, El Paso, TX 79968"
 Phone Number: (915) 747-5031
+
 Checking Account Number: 1049
 Savings Account Number: 2049
 Credit Account Number: 3049
@@ -13,20 +14,16 @@ Checking Starting Balance: $1671.42
 Savings Starting Balance: $3047.46
 Credit Starting Balance: $-816.59
 
-Checking Current Balance: $1271.42
-Savings Current Balance: $3147.46
+Checking Current Balance: $6630.22
+Savings Current Balance: $4047.46
 Credit Current Balance: $-716.59
 
 Transaction History:
 -----------------------------------------------------------
 Checking Account History:
-Tue Jul 21 18:08:52 MDT 2020,,,deposits,David,Morales,Checkings,100.0
-Tue Jul 21 18:08:55 MDT 2020,David,Morales,Checking,withdraws,,,100.0
-Tue Jul 21 18:09:02 MDT 2020,David,Morales,Checking,withdraws,,,100.0
-Tue Jul 21 18:09:13 MDT 2020,David,Morales,Checking,withdraws,,,100.0
-Tue Jul 21 18:09:29 MDT 2020,David,Morales,Checking,pays,Simba,King,Checking,100.0
-Tue Jul 21 18:09:51 MDT 2020,David,Morales,Checking,pays,Daniel,K,Credit,100.0
+Sat Jul 25 17:26:17 MDT 2020,,,deposits,David,Morales,Checking,5000.0
+Sat Jul 25 17:26:17 MDT 2020,David,Morales,Checking,pays,Shere,Khan,Checking,41.2
 Savings Account History:
-Tue Jul 21 18:09:02 MDT 2020,,,deposits,David,Morales,Savings,100.0
+Sat Jul 25 17:27:38 MDT 2020,,,deposits,David,Morales,Savings,1000.0
 Credit Account History:
-Tue Jul 21 18:09:13 MDT 2020,,,deposits,David,Morales,Credit,100.0
+Sat Jul 25 17:27:47 MDT 2020,,,deposits,David,Morales,Credit,100.0

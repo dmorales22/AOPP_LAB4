@@ -1,0 +1,28 @@
+David Axel Bank Statement            Date:25/07/2020-17:32:48
+-----------------------------------------------------------
+Name: John Doe
+Date of Birth: 01/01/1990
+Identification Number: 102
+Address: 123 Unknown Rd. 
+Phone Number: 411
+
+Checking Account Number: 1103
+Savings Account Number: 2103
+Credit Account Number: 3103
+
+Checking Starting Balance: $0.0
+Savings Starting Balance: $0.0
+Credit Starting Balance: $0.0
+
+Checking Current Balance: $1000.0
+Savings Current Balance: $10000.0
+Credit Current Balance: $-200.0
+
+Transaction History:
+-----------------------------------------------------------
+Checking Account History:
+Sat Jul 25 17:31:52 MDT 2020,,,deposits,John,Doe,Checking,1000.0
+Savings Account History:
+Sat Jul 25 17:31:58 MDT 2020,,,deposits,John,Doe,Savings,10000.0
+Credit Account History:
+Sat Jul 25 17:32:07 MDT 2020,John,Doe,Credit,withdraws,,,200.0

@@ -1,0 +1,26 @@
+David Axel Bank Statement            Date:25/07/2020-17:33:52
+-----------------------------------------------------------
+Name: Goofy Disney
+Date of Birth: "May 6, 1957"
+Identification Number: 4
+Address: "1313 Disneyland Dr, Anaheim, CA 92802"
+Phone Number: (714) 781-4636
+
+Checking Account Number: 1003
+Savings Account Number: 2003
+Credit Account Number: 3003
+
+Checking Starting Balance: $269.29
+Savings Starting Balance: $3653.91
+Credit Starting Balance: $-268.49
+
+Checking Current Balance: $284.92
+Savings Current Balance: $3572.91
+Credit Current Balance: $-268.49
+
+Transaction History:
+-----------------------------------------------------------
+Checking Account History:
+Savings Account History:
+Sat Jul 25 17:26:17 MDT 2020,Goofy,Disney,Savings,withdraws,,,81.0
+Credit Account History:
