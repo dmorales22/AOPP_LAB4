@@ -108,8 +108,11 @@ public class Customer extends Person implements Printable {
     public void printTransactionLog() {
         System.out.println("BANK USER TRANSACTIONS");
         System.out.println("Checking Account History:");
-        for(int i = 0; i < myChecking.getTransactionLog().size(); i++) { //Prints out checking account transactions
-			System.out.println(myChecking.getTransactionLog().get(i));
+
+		if(myChecking.getAccountNum() != 0) {
+			for(int i = 0; i < myChecking.getTransactionLog().size(); i++) { //Prints out checking account transactions
+				System.out.println(myChecking.getTransactionLog().get(i));
+			}
 		}
 
 		System.out.println("Savings Account History:");
@@ -120,9 +123,12 @@ public class Customer extends Person implements Printable {
 
 		System.out.println("Credit Account History:"); 
 
-		for(int i = 0; i < myCredit.getTransactionLog().size(); i++) { //Prints out credit account transactions
-			System.out.println(myCredit.getTransactionLog().get(i));
+		if(myCredit.getAccountNum() != 0) {
+			for(int i = 0; i < myCredit.getTransactionLog().size(); i++) { //Prints out credit account transactions
+				System.out.println(myCredit.getTransactionLog().get(i));
+			}
 		}
+
 		System.out.println("");
     }
 
@@ -156,8 +162,10 @@ public class Customer extends Person implements Printable {
 		System.out.println("-----------------------------------------------------------");
 		System.out.println("Checking Account History:");
 
-		for(int i = 0; i < myChecking.getTransactionLog().size(); i++) { //Prints out checking account transactions
-			System.out.println(myChecking.getTransactionLog().get(i));
+		if(myChecking.getAccountNum() != 0) {
+			for(int i = 0; i < myChecking.getTransactionLog().size(); i++) { //Prints out checking account transactions
+				System.out.println(myChecking.getTransactionLog().get(i));
+			}
 		}
 
 		System.out.println("Savings Account History:");
@@ -168,10 +176,12 @@ public class Customer extends Person implements Printable {
 
 		System.out.println("Credit Account History:"); 
 
-		for(int i = 0; i < myCredit.getTransactionLog().size(); i++) { //Prints out credit account transactions
-			System.out.println(myCredit.getTransactionLog().get(i));
+		if(myCredit.getAccountNum() != 0) {
+			for(int i = 0; i < myCredit.getTransactionLog().size(); i++) { //Prints out credit account transactions
+				System.out.println(myCredit.getTransactionLog().get(i));
+			}
 		}
-		
+
 		System.out.println("");
     }
 

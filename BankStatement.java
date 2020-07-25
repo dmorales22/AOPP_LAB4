@@ -101,9 +101,11 @@ public class BankStatement implements Printable {
 			Checking userChecking = bankUser.getChecking();
 			Savings userSavings = bankUser.getSavings();
 			Credit userCredit = bankUser.getCredit();
-	
-			for(int i = 0; i < userChecking.getTransactionLog().size(); i++) { //Prints out checking account transactions
-				textWriter.println(bankUser.getChecking().getTransactionLog().get(i));
+
+			if(bankUser.getChecking().getAccountNum() != 0) {
+				for(int i = 0; i < userChecking.getTransactionLog().size(); i++) { //Prints out checking account transactions
+					textWriter.println(bankUser.getChecking().getTransactionLog().get(i));
+				}
 			}
 
 			textWriter.println("Savings Account History:");
@@ -113,9 +115,11 @@ public class BankStatement implements Printable {
 			}
 
 			textWriter.println("Credit Account History:"); 
-
-			for(int i = 0; i < userCredit.getTransactionLog().size(); i++) { //Prints out credit account transactions
-				textWriter.println(bankUser.getCredit().getTransactionLog().get(i));
+			
+			if(bankUser.getCredit().getAccountNum() != 0) {
+				for(int i = 0; i < userCredit.getTransactionLog().size(); i++) { //Prints out credit account transactions
+					textWriter.println(bankUser.getCredit().getTransactionLog().get(i));
+				}
 			}
 
 			textWriter.close();
@@ -155,8 +159,11 @@ public class BankStatement implements Printable {
 
 		System.out.println("BANK USER TRANSACTIONS");
 		System.out.println("Checking Account History:");
-		for(int i = 0; i < userChecking.getTransactionLog().size(); i++) { //Prints out checking account transactions
-			System.out.println(userChecking.getTransactionLog().get(i));
+
+		if(bankUser.getChecking().getAccountNum() != 0) { 
+			for(int i = 0; i < userChecking.getTransactionLog().size(); i++) { //Prints out checking account transactions
+				System.out.println(userChecking.getTransactionLog().get(i));
+			}
 		}
 
 		System.out.println("Savings Account History:");
@@ -167,9 +174,12 @@ public class BankStatement implements Printable {
 
 		System.out.println("Credit Account History:"); 
 
-		for(int i = 0; i < userCredit.getTransactionLog().size(); i++) { //Prints out credit account transactions
-			System.out.println(userCredit.getTransactionLog().get(i));
+		if(bankUser.getCredit().getAccountNum() != 0) {
+			for(int i = 0; i < userCredit.getTransactionLog().size(); i++) { //Prints out credit account transactions
+				System.out.println(userCredit.getTransactionLog().get(i));
+			}
 		}
+
 		System.out.println("");
 	}
 
@@ -204,8 +214,10 @@ public class BankStatement implements Printable {
 		Savings userSavings = bankUser.getSavings();
 		Credit userCredit = bankUser.getCredit();
 
-		for(int i = 0; i < userChecking.getTransactionLog().size(); i++) { //Prints out checking account transactions
-			System.out.println(bankUser.getChecking().getTransactionLog().get(i));
+		if(bankUser.getChecking().getAccountNum() != 0) { 
+			for(int i = 0; i < userChecking.getTransactionLog().size(); i++) { //Prints out checking account transactions
+				System.out.println(userChecking.getTransactionLog().get(i));
+			}
 		}
 
 		System.out.println("Savings Account History:");
@@ -216,8 +228,10 @@ public class BankStatement implements Printable {
 
 		System.out.println("Credit Account History:"); 
 
-		for(int i = 0; i < userCredit.getTransactionLog().size(); i++) { //Prints out credit account transactions
-			System.out.println(bankUser.getCredit().getTransactionLog().get(i));
+		if(bankUser.getCredit().getAccountNum() != 0) {
+			for(int i = 0; i < userCredit.getTransactionLog().size(); i++) { //Prints out credit account transactions
+				System.out.println(userCredit.getTransactionLog().get(i));
+			}
 		}
 
 		System.out.println("");
