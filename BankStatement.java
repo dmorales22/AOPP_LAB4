@@ -81,6 +81,7 @@ public class BankStatement implements Printable {
 			textWriter.println("Identification Number: " + bankUser.getIdNum());
 			textWriter.println("Address: " + bankUser.getAddress());
 			textWriter.println("Phone Number: " + bankUser.getPhoneNum());
+			textWriter.println("Email: " + bankUser.getEmail());
 			textWriter.println("");
 			textWriter.println("Checking Account Number: " + bankUser.getChecking().getAccountNum());
 			textWriter.println("Savings Account Number: " + bankUser.getSavings().getAccountNum());

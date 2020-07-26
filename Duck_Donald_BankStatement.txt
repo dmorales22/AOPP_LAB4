@@ -1,10 +1,11 @@
-David Axel Bank Statement            Date:25/07/2020-17:30:39
+David Axel Bank Statement            Date:26/07/2020-14:56:34
 -----------------------------------------------------------
 Name: Donald Duck
 Date of Birth: "November 18, 2009"
 Identification Number: 2
 Address: "1313 Disneyland Dr, Anaheim, CA 92802"
 Phone Number: (714) 781-4636
+Email: DonaldDuck@disney.com
 
 Checking Account Number: 1001
 Savings Account Number: 2001
@@ -21,7 +22,7 @@ Credit Current Balance: $-639.49
 Transaction History:
 -----------------------------------------------------------
 Checking Account History:
-Sat Jul 25 17:26:17 MDT 2020,Donald,Duck,Checking,pays,Mickey,Mouse,Checking,100.0
+Sun Jul 26 14:52:36 MDT 2020,Donald,Duck,Checking,pays,Mickey,Mouse,Checking,100.0
 Savings Account History:
-Sat Jul 25 17:26:17 MDT 2020,Donald,Duck,Savings,withdraws,,,91.0
+Sun Jul 26 14:52:36 MDT 2020,Donald,Duck,Savings,withdraws,,,,91.0
 Credit Account History:

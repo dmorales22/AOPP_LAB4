@@ -24,8 +24,9 @@ public class Customer extends Person implements Printable {
     private String password;
 
     public Customer() { //Default constructor 
-        super();
+    	super();
     }
+
     /**Customer constructor with all attributes 
 	 * @param fN First name.
 	 * @param lN Last name.

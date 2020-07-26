@@ -302,11 +302,17 @@ public class UserUtilities {
 	* it directs the information to execute commands in the banking system.
 	* @author David Morales
 	*/
-	public static void transactionReader() throws FileNotFoundException, IOException {
+	public static void transactionReader() throws FileNotFoundException, IOException, NullPointerException {
 		try {
 			Scanner userIn = new Scanner(System.in);
 			System.out.println("Input csv to read transactions from: ");
 			String transactionFilename = userIn.next(); //Gets input of transaction file
+
+			if(transactionFilename.equals("transactonsLog.csv")) { 
+				System.out.println("Sorry. Can't read the log. Try again.");
+				return;
+			}
+
 			FileReader fr = new FileReader(transactionFilename);
 			BufferedReader textReader = new BufferedReader(fr);
 			//Declares all temp variables to perform transactions
@@ -533,6 +539,11 @@ public class UserUtilities {
 
 		catch(IOException ioEx) { 
 			System.out.println("IOException \n");
+			UserMenu.userMenu();
+		}
+		
+		catch(NullPointerException NPE) {
+			System.out.println("Opps, file is not formatted correctly.");
 			UserMenu.userMenu();
 		}
 	}
@@ -832,13 +843,20 @@ public class UserUtilities {
 			
 			if(!loggerTxt.exists()) { //If text file doesn't exit, then it creates one
 				loggerTxt.createNewFile();
+				FileWriter fw = new FileWriter("transactionsLog.csv", true);
+				BufferedWriter bw = new BufferedWriter(fw);
+				PrintWriter textWriter = new PrintWriter(bw);
+				textWriter.println("Date,From First Name,From Last Name,From Where,Action,To First Name,To Last Name,To Where,Action Amount");
+				textWriter.close();
 			}
-
-			FileWriter fw = new FileWriter("transactionsLog.csv", true);
-			BufferedWriter bw = new BufferedWriter(fw);
-			PrintWriter textWriter = new PrintWriter(bw);
-			textWriter.println(transaction); //Writes any string pass into this function to transactionLog.txt
-			textWriter.close();
+			
+			else {
+				FileWriter fw = new FileWriter("transactionsLog.csv", true);
+				BufferedWriter bw = new BufferedWriter(fw);
+				PrintWriter textWriter = new PrintWriter(bw);
+				textWriter.println(transaction); //Writes any string pass into this function to transactionLog.txt
+				textWriter.close();
+			}
 		}
 
 		catch(IOException ioEx) { 

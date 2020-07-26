@@ -1,10 +1,11 @@
-David Axel Bank Statement            Date:25/07/2020-17:27:54
+David Axel Bank Statement            Date:26/07/2020-14:55:21
 -----------------------------------------------------------
 Name: David Morales
 Date of Birth: "September 20, 1972"
 Identification Number: 91
 Address: "531 W. University Ave, El Paso, TX 79968"
 Phone Number: (915) 747-5031
+Email: DavidMorales@disney.com
 
 Checking Account Number: 1049
 Savings Account Number: 2049
@@ -15,15 +16,13 @@ Savings Starting Balance: $3047.46
 Credit Starting Balance: $-816.59
 
 Checking Current Balance: $6630.22
-Savings Current Balance: $4047.46
-Credit Current Balance: $-716.59
+Savings Current Balance: $3047.46
+Credit Current Balance: $-816.59
 
 Transaction History:
 -----------------------------------------------------------
 Checking Account History:
-Sat Jul 25 17:26:17 MDT 2020,,,deposits,David,Morales,Checking,5000.0
-Sat Jul 25 17:26:17 MDT 2020,David,Morales,Checking,pays,Shere,Khan,Checking,41.2
+Sun Jul 26 14:52:36 MDT 2020,,,deposits,David,Morales,Checking,5000.0
+Sun Jul 26 14:52:36 MDT 2020,David,Morales,Checking,pays,Shere,Khan,Checking,41.2
 Savings Account History:
-Sat Jul 25 17:27:38 MDT 2020,,,deposits,David,Morales,Savings,1000.0
 Credit Account History:
-Sat Jul 25 17:27:47 MDT 2020,,,deposits,David,Morales,Credit,100.0

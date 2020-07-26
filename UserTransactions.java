@@ -291,7 +291,7 @@ public class UserTransactions {
 
 					myAccount.getChecking().setCurrentBalance(myAccount.getChecking().getCurrentBalance() - amountWithdraw); //Withdraws balance
 					System.out.println("Withdraw success! New " + myAccount.getFirstName() + " " + myAccount.getLastName() + " " + "checking balance is: $" + myAccount.getChecking().getCurrentBalance() + "\n");
-					transactionStr = date + "," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Checking,withdraws,,," + amountWithdraw;
+					transactionStr = date + "," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Checking,withdraws,,,," + amountWithdraw;
 
 					UserUtilities.transactionLogger(transactionStr);
 					myAccount.getChecking().getTransactionLog().add(transactionStr);
@@ -305,7 +305,7 @@ public class UserTransactions {
 
 					myAccount.getSavings().setCurrentBalance(myAccount.getSavings().getCurrentBalance() - amountWithdraw);//Withdraws balance
 					System.out.println("Withdraw success! New " + myAccount.getFirstName() + " " + myAccount.getLastName() + " " + "savings balance is: $" + myAccount.getSavings().getCurrentBalance() + "\n");
-					transactionStr = date + "," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Savings,withdraws,,," + amountWithdraw;
+					transactionStr = date + "," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Savings,withdraws,,,," + amountWithdraw;
 
 					UserUtilities.transactionLogger(transactionStr);
 					myAccount.getSavings().getTransactionLog().add(transactionStr);
@@ -319,7 +319,7 @@ public class UserTransactions {
 
 					myAccount.getCredit().setCurrentBalance(myAccount.getCredit().getCurrentBalance() - amountWithdraw);//Withdraws balance
 					System.out.println("Withdraw success! New " + myAccount.getFirstName() + " " + myAccount.getLastName() + " " + "credit balance is: $" + myAccount.getCredit().getCurrentBalance() + "\n");
-					transactionStr = date + "," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Credit,withdraws,,," + amountWithdraw;
+					transactionStr = date + "," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Credit,withdraws,,,," + amountWithdraw;
 
 					UserUtilities.transactionLogger(transactionStr);
 					myAccount.getCredit().getTransactionLog().add(transactionStr);
