@@ -308,7 +308,7 @@ public class UserUtilities {
 			System.out.println("Input csv to read transactions from: ");
 			String transactionFilename = userIn.next(); //Gets input of transaction file
 
-			if(transactionFilename.equals("transactonsLog.csv")) { 
+			if(transactionFilename.equals("transactionsLog.csv")) { 
 				System.out.println("Sorry. Can't read the log. Try again.");
 				return;
 			}
