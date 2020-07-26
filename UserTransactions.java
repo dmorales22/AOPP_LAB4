@@ -229,6 +229,11 @@ public class UserTransactions {
 
 			switch(accountType) {
 				case 0:
+					if(myAccount.getChecking().getAccountNum() == 0) {
+						System.out.println("Inquiry failed. Account does not exist.");
+						return;
+					}
+
 					System.out.println("Inquiry success! " + myAccount.getFirstName() + " " + myAccount.getLastName() + " Checking account balance: $" + myAccount.getChecking().getCurrentBalance() + "\n");
 					transactionStr = date + "," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Checking,inquires,,,,";
 					UserUtilities.transactionLogger(transactionStr);
@@ -236,6 +241,11 @@ public class UserTransactions {
 					break;
 
 				case 1:
+					if(myAccount.getSavings().getAccountNum() == 0) {
+						System.out.println("Inquiry failed. Account does not exist.");
+						return;
+					}
+
 					System.out.println("Inquiry success! " + myAccount.getFirstName() + " " + myAccount.getLastName() + " Savings account balance: $" + myAccount.getSavings().getCurrentBalance() + "\n");
 					transactionStr = date + "," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Savings,inquires,,,,";
 					UserUtilities.transactionLogger(transactionStr);
@@ -243,6 +253,11 @@ public class UserTransactions {
 					break;
 
 				case 2:
+					if(myAccount.getCredit().getAccountNum() == 0) {
+						System.out.println("Inquiry failed. Account does not exist.");
+						return;
+					}
+
 					System.out.println("Inquiry success! " + myAccount.getFirstName() + " " + myAccount.getLastName() + " Credit account balance: $" + myAccount.getCredit().getCurrentBalance() + "\n");
 					transactionStr = date + "," + myAccount.getFirstName() + "," + myAccount.getLastName() + ",Credit,inquires,,,,";
 					UserUtilities.transactionLogger(transactionStr);
