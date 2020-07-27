@@ -76,3 +76,8 @@ Sun Jul 26 18:53:07 MDT 2020,Jasmine,Disney,Savings,withdraws,,,,59.0
 Sun Jul 26 18:53:07 MDT 2020,Daniel,Mejia,Checking,pays,Aladdin,Disney,Checking,25.16
 Sun Jul 26 18:53:07 MDT 2020,Simba,Disney,Savings,withdraws,,,,100.0
 Sun Jul 26 18:53:07 MDT 2020,Daniel,Mejia,Checking,pays,Mufassa,Disney,Checking,33.54
+Sun Jul 26 19:11:29 MDT 2020,,,deposits,John,Doe,Checking,100.0
+Sun Jul 26 19:11:35 MDT 2020,John,Doe,Checking,withdraws,,,,10.0
+Sun Jul 26 19:11:39 MDT 2020,,,deposits,John,Doe,Checking,12.0
+Sun Jul 26 19:11:45 MDT 2020,,,deposits,John,Doe,Savings,1200.0
+Sun Jul 26 19:11:52 MDT 2020,John,Doe,Credit,withdraws,,,,200.0
